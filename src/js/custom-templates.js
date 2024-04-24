@@ -32,7 +32,7 @@ const simpleTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
                 {height: 30}, new go.Binding("height", "height"),
                 {width: 100}, new go.Binding("width", "width"),
                 {fill: colors.bgColorLight, stroke: "WhiteSmoke"}),
-    GO(go.TextBlock, textStyle150(), new go.Binding("text", "key")),
+    GO(go.TextBlock, textStyle150(), new go.Binding("text", "desc")),
         { click: (e, obj) => showDetails(e, obj) }
 );
 
@@ -64,7 +64,28 @@ const simpleLinkTemplate =
         GO(go.Shape, { toArrow: "Standard" }, {stroke: "WhiteSmoke", fill: "WhiteSmoke"}),
     );    
 
-const gridTemplate = GO(go.Group, "Auto", { selectionAdorned: false },
+const grid2Template = GO(go.Group, "Auto", { selectionAdorned: false },
+    { layout: GO(go.GridLayout, {
+        wrappingColumn: 2, alignment: go.GridLayout.Position,cellSize: new go.Size(1, 1), spacing: new go.Size(5,5)
+    }), isShadowed: true, shadowOffset: new go.Point(5, 5), shadowBlur: 1, shadowColor: colors.blackShadow,
+    fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides },
+    GO(go.Shape, "RoundedRectangle",
+        { parameter1: 10, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
+    GO(go.Panel, "Vertical",  // position header above the subgraph
+        { defaultAlignment: go.Spot.Left },
+        GO(go.Panel, "Horizontal",  // the header
+            { defaultAlignment: go.Spot.Left, padding: new go.Margin(0, 10)},
+            GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
+            GO(go.TextBlock, textStyle(), new go.Binding("text", "desc"),),
+            GO("SubGraphExpanderButton", subGraphExpanderButtonStyle()),
+            { click: (e, obj) => showDetails(e, obj) }
+        ),
+        GO(go.Placeholder,     // represents area for all member parts
+            { padding: new go.Margin(0, 0), background: "Transparent" })
+    ), new go.Binding("isSubGraphExpanded", "expand"),
+);
+
+const grid3Template = GO(go.Group, "Auto", { selectionAdorned: false },
     { layout: GO(go.GridLayout, {
         wrappingColumn: 3, alignment: go.GridLayout.Position,cellSize: new go.Size(1, 1), spacing: new go.Size(5,5)
     }), isShadowed: true, shadowOffset: new go.Point(5, 5), shadowBlur: 1, shadowColor: colors.blackShadow,
@@ -78,7 +99,7 @@ const gridTemplate = GO(go.Group, "Auto", { selectionAdorned: false },
             GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
             GO(go.TextBlock, textStyle(), new go.Binding("text", "desc"),),
             GO("SubGraphExpanderButton", subGraphExpanderButtonStyle()),
-//            { click: (e, obj) => showDetails(e, obj) }
+            { click: (e, obj) => showDetails(e, obj) }
         ),
         GO(go.Placeholder,     // represents area for all member parts
             { padding: new go.Margin(0, 0), background: "Transparent" })

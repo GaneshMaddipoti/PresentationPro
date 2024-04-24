@@ -11,7 +11,8 @@ linkTemplateMap.add("simple", simpleLinkTemplate);
 diagram.linkTemplateMap = linkTemplateMap;
 
 const groupTemplateMap = new go.Map();
-groupTemplateMap.add("grid", gridTemplate);
+groupTemplateMap.add("grid2", grid2Template);
+groupTemplateMap.add("grid3", grid3Template);
 groupTemplateMap.add("tree", treeTemplate);
 groupTemplateMap.add("tree90", tree90Template);
 groupTemplateMap.add("tree250", tree250Template);
