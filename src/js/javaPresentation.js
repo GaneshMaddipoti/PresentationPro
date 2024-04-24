@@ -103,6 +103,19 @@ let executionHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 Java Program Execution
 </div>
+<b>Execution</b><br/>
+1) Compile the source code using javac, $javac Program.java -> outputs Program.class <br/>
+2) Execute the class file using java,   $java Program                                   <br/>
+3) Compile and execute single source file using java, $java Program.java            <br/>
+4) Import tells where to find the class <br/>
+5) import java.io.*; will import only classes in that package not sub packages <br/>
+6) import java.io.*; will not import all classes in that package but needed ones <br/>
+7) Listing all import statements for readability, * for shorten the imports <br/>
+8) import java.lang.*; is by default placed, we no need to place <br/>
+9) Java automatically looks in the current package for classes <br/>
+10) import java.util.Date; import java.sql.Date; - will result compilation error <br/>
+11) jar -cvf (create, verbose, filename) sample.jar -C temp/ - to create jar containing the file in directory<br/>
+<br/>
 <b>javac</b><br/>
 Java Compiler converts source files(.java) to bytecode(.class) <br/>
 Bytecode is a special format that JVM can run <br/>
@@ -198,20 +211,7 @@ A file should contain only one public class, and that class name should match wi
 Inside class/interface we use syntax to write the code <br/>
 A Java program begins execution with its main method - its an entry point <br/>
 <br/>
-<b>Execution</b><br/>
-1) Compile the source code using javac, $javac Program.java -> outputs Program.class <br/>
-2) Execute the class file using java,   $java Program                                   <br/>
-3) Compile and execute single source file using java, $java Program.java            <br/>
-4) Import tells where to find the class <br/>
-5) import java.io.*; will import only classes in that package not sub packages <br/>
-6) import java.io.*; will not import all classes in that package but needed ones <br/>
-7) Listing all import statements for readability, * for shorten the imports <br/>
-8) import java.lang.*; is by default placed, we no need to place <br/>
-9) Java automatically looks in the current package for classes <br/>
-10) import java.util.Date; import java.sql.Date; - will result compilation error <br/>
-11) jar -cvf (create, verbose, filename) sample.jar -C temp/ - to create jar containing the file in directory<br/>
 
-<br/>
 <b>Package</b>
 <ul>
     <li>It is used to group related classes </li>
@@ -1383,10 +1383,10 @@ ChristmasTree tree2 = new BubbleLights(
 
 let javaNodeDataArray = [
 
-    {key: "Presentation", desc: "Presentation", isGroup: true, category: "tree", img: "img/system.svg", expand: true},
+    {key: "Presentation", desc: "Present", isGroup: true, category: "tree", img: "img/system.svg", expand: true},
     {key: "System", desc: "System", group: "Presentation", isGroup: true, category: "tree", img: "img/system.svg", expand: true},
 
-    {key: "Storage", desc: "Storage", isGroup: true, group: "System", category: "tree", img: "img/harddisk.svg", expand: true},
+    {key: "Storage", desc: "Storage", isGroup: true, group: "System", category: "tree", img: "img/drive.svg", expand: true},
 
     {key: "CPU", desc: "CPU", isGroup: true, group: "System", category: "tree90", img: "img/pc.svg", expand: true},
     {key: "IO", desc: "Input/Output", group: "System", category: "simple", img: "img/terminal.svg", expand: false},
@@ -1397,7 +1397,7 @@ let javaNodeDataArray = [
 
     {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "tree", toolTipHTML: javaProgrammingHTML, expand: true, img: "img/application.svg",},
 
-    {key: "Sourcecode", desc: "Sourcecode", group: "Application", isGroup: true, category: "tree", toolTipHTML: javaSourceCodeHTML, expand: false, img: "img/sourceFolder.svg",},
+    {key: "Sourcecode", desc: "source", group: "Application", isGroup: true, category: "tree", toolTipHTML: javaSourceCodeHTML, expand: false, img: "img/sourceFolder.svg",},
     {key: "Package", desc: "Package", group: "Sourcecode", isGroup: true, category: "tree",expand: true, img: "img/package.svg",},
     {key: "File", desc: "File", group: "Package", isGroup: true, category: "tree",expand: true, img: "img/byteFile.svg",},
 
@@ -1461,9 +1461,16 @@ let javaNodeDataArray = [
     {key: "Java Compiler", desc: "Compiler", category: "simple", group: "JDK", img: "img/tools.svg"},
     {key: "Java API", desc: "API", category: "grid", isGroup: true, group: "JDK", img: "img/plugin.svg", expand: false},
 
-    {key: "Meta", desc: "Meta", category: "simple", group: "Memory"},
-    {key: "Heap", desc: "Heap", category: "simple", group: "Memory"},
-    {key: "Stack", desc: "Stack", category: "simple", group: "Memory"},
+    {key: "Meta", desc: "Meta", category: "grid", group: "Memory", isGroup: true,},
+    {key: "class1", desc: "cls1", category: "object", group: "Meta", fill: "#3A5262"},
+    {key: "class2", desc: "cls2", category: "object", group: "Meta", fill: "#3A5262"},
+
+    {key: "Heap", desc: "Heap", category: "grid", group: "Memory", isGroup: true,},
+    {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
+    {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
+
+    {key: "Stack", desc: "Stack", category: "grid", group: "Memory", isGroup: true,},
+    {key: "thread1", desc: "thread1", category: "stack", group: "Stack", items: ["", "ref1", "var1", "method1"]},
 
     {key: "Java VM", desc: "Java VM", isGroup: true, expand: false, category: "tree", group: "JDK"},
 
@@ -1493,33 +1500,33 @@ let javaNodeDataArray = [
 
 let javaLinkDataArray = [
 
-    {from:"Storage", to: "Execution", category: "byDirLink"},
-    {from:"Execution", to: "CPU", category: "byDirLink"},
-    {from:"Memory", to: "Processor", category: "byDirLink"},
-    {from:"CPU", to: "IO", category: "byDirLink"},
-    {from:"About Me", to: "Features", category: "invisibleLink"},
-    {from:"Title", to: "About Me", category: "invisibleLink"},
-    {from:"Features", to: "eCommerce", category: "invisibleLink"},
+    {from:"Storage", to: "Execution", category: "simple"},
+    {from:"Execution", to: "CPU", category: "simple"},
+    {from:"Memory", to: "Processor", category: "simple"},
+    {from:"CPU", to: "IO", category: "simple"},
+    {from:"About Me", to: "Features", category: "simple"},
+    {from:"Title", to: "About Me", category: "simple"},
+    {from:"Features", to: "eCommerce", category: "simple"},
 
 
     { from: "Add1", fromPort: "Out", to: "Subtract1", toPort: "A" },
 
 
-    {from:"Java-Install", to: "Java-Syntax", category: "simplelink"},
-    {from:"Java-Input", to: "Java-Process", category: "simplelink"},
-    {from:"Java-Process", to: "Java-Output", category: "simplelink"},
-    {from:"Package", to: "Java-Semantics", category: "invisibleLink"},
-    {from:"Initialization", to: "Process", category: "invisibleLink"},
-//    {from:"Java-Semantics", to: "Java-Solid", category: "simplelink"},
-{key: "scToCompiler", from: "Java Source Code", to: "Java Compiler", category: "simplelink"},
-    {key: "compilerToBC", from: "Java Compiler", to: "Java Byte Code", category: "simplelink"},
-    {key: "bcTojre", from: "Java Byte Code", to: "Java RE", category: "simplelink"},
-    {key: "jlTolinking", from: "Java Loading", to: "Java Linking", category: "simplelink"},
-    {key: "linkingToInit", from: "Java Linking", to: "Java Initialization", category: "simplelink"},
-    {key: "bootstrapToextension", from: "Java Bootstrap Loader", to: "Java Extension Loader", category: "simplelink"},
-    {key: "extensionToApplication", from: "Java Extension Loader", to: "Java Application Loader", category: "simplelink"},
-    {key: "verifyToPrepare", from: "Java Verify", to: "Java Prepare", category: "simplelink"},
-    {key: "prepareToResolve", from: "Java Prepare", to: "Java Resolve", category: "simplelink"},
+    {from:"Java-Install", to: "Java-Syntax", category: "simple"},
+    {from:"Java-Input", to: "Java-Process", category: "simple"},
+    {from:"Java-Process", to: "Java-Output", category: "simple"},
+    {from:"Package", to: "Java-Semantics", category: "simple"},
+    {from:"Initialization", to: "Process", category: "simple"},
+//    {from:"Java-Semantics", to: "Java-Solid", category: "simple"},
+{key: "scToCompiler", from: "Java Source Code", to: "Java Compiler", category: "simple"},
+    {key: "compilerToBC", from: "Java Compiler", to: "Java Byte Code", category: "simple"},
+    {key: "bcTojre", from: "Java Byte Code", to: "Java RE", category: "simple"},
+    {key: "jlTolinking", from: "Java Loading", to: "Java Linking", category: "simple"},
+    {key: "linkingToInit", from: "Java Linking", to: "Java Initialization", category: "simple"},
+    {key: "bootstrapToextension", from: "Java Bootstrap Loader", to: "Java Extension Loader", category: "simple"},
+    {key: "extensionToApplication", from: "Java Extension Loader", to: "Java Application Loader", category: "simple"},
+    {key: "verifyToPrepare", from: "Java Verify", to: "Java Prepare", category: "simple"},
+    {key: "prepareToResolve", from: "Java Prepare", to: "Java Resolve", category: "simple"},
 ];
 let nodeDataArray = [];
 let linkDataArray = [];

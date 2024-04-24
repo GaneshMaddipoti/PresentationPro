@@ -1,5 +1,8 @@
 const nodeTemplateMap = new go.Map();
+nodeTemplateMap.add("stack", stackTemplate);
+nodeTemplateMap.add("object", objectTemplate);
 nodeTemplateMap.add("simple", simpleTemplate);
+nodeTemplateMap.add("simpleText", simpleTextTemplate);
 nodeTemplateMap.add("token", tokenTemplate);
 diagram.nodeTemplateMap = nodeTemplateMap;
 
@@ -11,19 +14,9 @@ const groupTemplateMap = new go.Map();
 groupTemplateMap.add("grid", gridTemplate);
 groupTemplateMap.add("tree", treeTemplate);
 groupTemplateMap.add("tree90", tree90Template);
+groupTemplateMap.add("tree250", tree250Template);
 diagram.groupTemplateMap = groupTemplateMap;
 
-//const nodeDataArray = [
-//      { key: "System", category: "tree", isGroup: true, expand: true},
-//
-//      { key: "Alpha", category: "simple", group: "System"},
-//      { key: "Gama", category: "simple", group: "System"},
-//      { key: "Beta", category: "tree", group: "System", isGroup: true, expand: true},
-//    ];
-//    const linkDataArray = [
-//      { from: "Alpha", to: "Beta", category: "simple",  },
-//      { from: "Gama", to: "Beta", category: "simple",  },
-//    ];
 diagram.animationManager.initialAnimationStyle = go.AnimationStyle.AnimateLocations;
 diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
 
