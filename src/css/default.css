@@ -20,7 +20,7 @@ a {
 }
 
 #myDiagramDiv {
-    width:55%;
+    width:90%;
     height: 100vh;
     background-color: #2A4252;
     margin-top:-70px;
@@ -35,7 +35,7 @@ a {
     font-family: Roboto, Arial, serif;
     font-size: 20px;
     font-weight: lighter;
-    padding: 50px 50px;
+    padding: 40px 40px;
     /*width: 300px;*/
     border: 0px solid WhiteSmoke;
     /*border-radius: 5px;*/
@@ -52,7 +52,7 @@ a {
     opacity: 0;
     display: none;
     transition: opacity 1s, display 1s allow-discrete;
-    border: 3px solid #cccccc;
+    border: 0px solid #cccccc;
 }
 
 .reqBanner {

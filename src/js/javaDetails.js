@@ -56,14 +56,6 @@ Content
 <ul><li>Anyone who wants to learn Java language from zero to advanced</li></ul>
 `;
 
-let eCommerceHTML = `
-<img src="img/eCommerce.svg" width="95%" height="95%"/>
-`;
-
-let systemHTML = `
-A system is collection of components, serves set of users with set of requirements <br/>
-`;
-
 let javaHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 How to give instructions to the system ?
@@ -97,12 +89,7 @@ It contains <br/>
 <li>Application Programming Interface(API)</li>
 <li>Java Virtual Machine(JVM)</li>
 </ul>
-`;
-
-let executionHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-Java Program Execution
-</div>
+<br/>
 <b>Execution</b><br/>
 1) Compile the source code using javac, $javac Program.java -> outputs Program.class <br/>
 2) Execute the class file using java,   $java Program                                   <br/>
@@ -124,23 +111,15 @@ Using -d option, we can specify destination directory for class files <br/>
 Using -cp option, we can specify classpath location/jar to find <br/>
 We can use * wild card with -cp to include all classes and jars in that directory <br/>
 <br/>
-<b>java</b><br/>
-Java Virtual Machine(JVM) knows how to run the bytecode on the actual machine <br/>
-
-`;
-
-let jreHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-How to run the program ?
-</div>
 <b>JRE</b><br/>
 Java runtime environment(JRE) contain Java API and JVM <br/>
 java launches Java virtual machine(JVM) before running the program <br/>
 `;
 
-let javaLiteralHTML = `
+
+let javaSyntaxHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-How to represent data in program ?
+Syntax
 </div>
 <b>Literals</b><br/>
 <ul>
@@ -159,21 +138,11 @@ Ex: long income = 1_234_456l;</li>
 </ul>
 <b>Floating point Literals</b> <br/>
 Ex: double val = 23.456;
-`;
-
-let javaKeywordHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-What are reserved words in Java ?
-</div>
+<br/>
 <b>Keywords</b><br/>
 It's a reserved word, have predefined meaning in java language <br/>
 Ex: int, byte, for, which, try, catch, class, interface, enum, etc...<br/>
-`;
-
-let javaOperatorsHMTL = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-What are all operators available in Java ?
-</div>
+<br/>
 <b>Operators</b><br/>
 The operator performs an operation on variables/literals its used with <br/>
 Ex : +, -, *, >, etc... <br/>
@@ -188,12 +157,7 @@ Ex : +, -, *, >, etc... <br/>
 <tr><td>8)</td><td>Conditional</td><td>? :/td></tr>
 <tr><td>9)</td><td>Type check</td><td>instanceOf</td></tr>
 </table>
-`;
-
-let javaExpressionHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-What are expressions ?
-</div>
+<br/>
 <b>Expressions</b><br/>
 An expression is a coding construct, that evaluates to a single value <br/>
 This will be the code segment on the right side of = operator, in an assignment or declaration statement <br/>
