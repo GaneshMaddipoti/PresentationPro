@@ -21,6 +21,8 @@ diagram.groupTemplateMap = groupTemplateMap;
 diagram.animationManager.initialAnimationStyle = go.AnimationStyle.AnimateLocations;
 diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
 
+diagram.commandHandler.zoomToFit();
+
 function addNode() {
     diagram.model.commit(m => {
         const newNodeData = { key: "NewNode", category: "simple", group: "Beta" };
@@ -61,6 +63,50 @@ function animateToken(token, from, to) {
     updateToken();
 }
 
+async function focusNode(){
+
+
+
+//    let animation = new go.Animation();
+//    animation.add(diagram, "position", diagram.position, new go.Point(-100, -220));
+//    animation.duration = 1000;
+//    animation.start();
+//    await new Promise(r => setTimeout(r, 1000));
+//    animation.stop();
+//
+//    animation = new go.Animation();
+//    diagram.commit(d => {
+//      d.nodes.each(node => {
+//        if (node.data.key === "Meta") return;
+//            animation.add(node, "opacity", node.opacity, 0.0);
+//      });
+//      d.links.each(link => {
+//        animation.add(link, "opacity", link.opacity, 0.0);
+//      });
+//      animation.duration = 1000;
+//      animation.start();
+//    });
+//    await new Promise(r => setTimeout(r, 1000));
+//    animation.stop();
+//
+//    diagram.commit(d => {
+//      d.nodes.each(node => {
+//          if (node.data.key === "Meta") {
+//            const animation = new go.Animation();
+//            animation.add(node, "scale", node.scale, 2);
+//            animation.duration = 1000;
+//            animation.start();
+//
+//            const animation1 = new go.Animation();
+//            animation1.add(node, "position", node.position, node.position.copy().offset(-200, 0));
+//            animation1.duration = 1000;
+//            animation1.start();
+//
+//          }
+//      });
+//    }, "decrease scale");
+}
+
 function updateToken() {
     let part1 = diagram.findPartForKey(aToken);
     var link = diagram.findNodeForKey(aFrom).findLinksTo(diagram.findNodeForKey(aTo)).first();
@@ -95,6 +141,22 @@ function showToolTip(obj, diagram, tool) {
 //        toolTipDIV.style.top = (window.innerHeight - 600)/2 + "px";
         toolTipDIV.innerHTML = closeButtonHTML +
             "<div class='tooltipBody'>" + obj.data.toolTipHTML + "</div>";
+        toolTipDIV.style.opacity = "1";
+        toolTipDIV.style.display = "block";
+        toolTipFlag = true;
+    }
+}
+
+function showInFullScreen(arg) {
+    let html = eval(arg);
+    let toolTipDIV = document.getElementById("toolTipDIV");
+    let closeButtonHTML = '<button id="tooltipClose" onclick="hideToolTip()">X</button>';
+    let footerHTML = '<p class="tooltipFooter">Footer</p>';
+    if(toolTipDIV && html) {
+//        toolTipDIV.style.left = (window.innerWidth - 600)/2 + "px";
+//        toolTipDIV.style.top = (window.innerHeight - 600)/2 + "px";
+        toolTipDIV.innerHTML = closeButtonHTML +
+            "<div class='tooltipBody'>" + html + "</div>";
         toolTipDIV.style.opacity = "1";
         toolTipDIV.style.display = "block";
         toolTipFlag = true;

@@ -1,12 +1,12 @@
 function textStyle() {
     return [
-        { margin: 10, width: 75, textAlign: "center", font: '500 14px Cursive, sans-serif', stroke: "#cccccc"}
+        { margin: 10, width: 100, textAlign: "center", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
     ];
 }
 
 function textStyle150() {
     return [
-        { margin: 10, width: 75, textAlign: "center", font: '500 14px Cursive, sans-serif', stroke: "#cccccc"}
+        { margin: 10, width: 100, textAlign: "center", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
     ];
 }
 

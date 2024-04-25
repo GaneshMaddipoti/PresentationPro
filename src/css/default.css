@@ -11,13 +11,19 @@ body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   border-radius: 5px;
   margin:0px;overflow-x: hidden;overflow-y: hidden;
+  background: #2A4252;
+}
+
+a {
+    text-decoration: none;
+    color: #cccccc;
 }
 
 #myDiagramDiv {
-    width:100%;
+    width:55%;
     height: 100vh;
     background-color: #2A4252;
-    margin-top:-80px;
+    margin-top:-70px;
     border: 0px solid Silver
 }
 
@@ -26,26 +32,27 @@ body {
     color: #cccccc;
     z-index: 1000;
     display: none;
-    font-family: Cursive,Roboto, Arial, serif;
-    font-size: 24px;
+    font-family: Roboto, Arial, serif;
+    font-size: 20px;
     font-weight: lighter;
-    padding: 75px 100px;
+    padding: 50px 50px;
     /*width: 300px;*/
     border: 0px solid WhiteSmoke;
     /*border-radius: 5px;*/
     line-height: 150%;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    width: 100%;
+    width: 45%;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    margin: auto;
+    right: 0px;
     position: absolute;
     /*left: 300px;*/
     top: 0px;
     opacity: 0;
     display: none;
     transition: opacity 1s, display 1s allow-discrete;
+    border: 3px solid #cccccc;
 }
 
 .reqBanner {
@@ -55,13 +62,13 @@ body {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 15px;
-    border: 5px solid #cccccc;
+    border: 3px solid #cccccc;
     font-weight: bold;
 }
 
 .reqBannerImg {
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     vertical-align: middle;
     margin-right: 10px;
     content : url("../img/requirement.svg");

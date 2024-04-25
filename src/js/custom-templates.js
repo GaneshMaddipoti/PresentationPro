@@ -91,18 +91,18 @@ const grid3Template = GO(go.Group, "Auto", { selectionAdorned: false },
     }), isShadowed: true, shadowOffset: new go.Point(5, 5), shadowBlur: 1, shadowColor: colors.blackShadow,
     fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides },
     GO(go.Shape, "RoundedRectangle",
-        { parameter1: 10, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
+        { parameter1: 5, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
     GO(go.Panel, "Vertical",  // position header above the subgraph
         { defaultAlignment: go.Spot.Left },
         GO(go.Panel, "Horizontal",  // the header
-            { defaultAlignment: go.Spot.Left, padding: new go.Margin(0, 10)},
+            { defaultAlignment: go.Spot.Left, padding: new go.Margin(0, 5)},
             GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
             GO(go.TextBlock, textStyle(), new go.Binding("text", "desc"),),
             GO("SubGraphExpanderButton", subGraphExpanderButtonStyle()),
             { click: (e, obj) => showDetails(e, obj) }
         ),
         GO(go.Placeholder,     // represents area for all member parts
-            { padding: new go.Margin(0, 0), background: "Transparent" })
+            { padding: new go.Margin(5, 5), background: "Transparent" })
     ), new go.Binding("isSubGraphExpanded", "expand"),
 );
 
@@ -112,18 +112,18 @@ const treeTemplate = GO(go.Group, "Auto", { selectionAdorned: false },
     isShadowed: true, shadowOffset: new go.Point(5, 5), shadowBlur: 1, shadowColor: colors.blackShadow,
             fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides},
     GO(go.Shape, "RoundedRectangle", // surrounds everything
-        { parameter1: 10, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
+        { parameter1: 5, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
     GO(go.Panel, "Vertical",  // position header above the subgraph
         { defaultAlignment: go.Spot.Left },
         GO(go.Panel, "Horizontal",  // the header
-            { defaultAlignment: go.Spot.Right, padding: new go.Margin(0, 10) },
+            { defaultAlignment: go.Spot.Right, padding: new go.Margin(0, 5) },
             GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
             GO(go.TextBlock, textStyle(), new go.Binding("text", "desc"),),
             GO("SubGraphExpanderButton", subGraphExpanderButtonStyle()),
              { click: (e, obj) => showDetails(e, obj) }
         ),
         GO(go.Placeholder,     // represents area for all member parts
-            { padding: new go.Margin(0, 0), background: "Transparent" }),
+            { padding: new go.Margin(5, 5), background: "Transparent" }),
     ), new go.Binding("isSubGraphExpanded", "expand"),
 );
 
@@ -133,18 +133,18 @@ const tree90Template = GO(go.Group, "Auto", { selectionAdorned: false },
     isShadowed: true, shadowOffset: new go.Point(5, 5), shadowBlur: 1, shadowColor: colors.blackShadow,
             fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides},
     GO(go.Shape, "RoundedRectangle", // surrounds everything
-        { parameter1: 10, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
+        { parameter1: 5, stroke: "WhiteSmoke", fill: colors.bgColorLight}),
     GO(go.Panel, "Vertical",  // position header above the subgraph
         { defaultAlignment: go.Spot.Left },
         GO(go.Panel, "Horizontal",  // the header
-            { defaultAlignment: go.Spot.Right, padding: new go.Margin(0, 10) },
+            { defaultAlignment: go.Spot.Right, padding: new go.Margin(0, 5) },
             GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
             GO(go.TextBlock, textStyle(), new go.Binding("text", "key"),),
             GO("SubGraphExpanderButton", subGraphExpanderButtonStyle()),
              { click: (e, obj) => showDetails(e, obj) }
         ),
         GO(go.Placeholder,     // represents area for all member parts
-            { padding: new go.Margin(0, 0), background: "Transparent" }),
+            { padding: new go.Margin(5, 5), background: "Transparent" }),
     ), new go.Binding("isSubGraphExpanded", "expand"),
 );
 
