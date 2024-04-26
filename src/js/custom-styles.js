@@ -10,6 +10,14 @@ function textStyle150() {
     ];
 }
 
+function textStyleLeft150() {
+    return [
+        { margin: 10, width: 100, textAlign: "left", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
+    ];
+}
+
+
+
 function subGraphExpanderButtonStyle() {
     return [
         {

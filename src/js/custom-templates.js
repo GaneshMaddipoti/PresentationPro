@@ -38,12 +38,12 @@ const simpleTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
 
 const simpleTextTemplate =
     GO(go.Node, "Auto",{ selectionAdorned: false },{ fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides, isShadowed: false, shadowOffset: new go.Point(3, 3) },
-        GO(go.Shape, {height: 30}, new go.Binding("height", "height"), new go.Binding("width", "width"),
+        GO(go.Shape, {height: 15}, new go.Binding("height", "height"), new go.Binding("width", "width"),
             new go.Binding("figure", "shape"), { strokeWidth: 0, stroke: "#555", fill:"Transparent" }, new go.Binding("stroke", "color")),
         GO(go.Panel, "Horizontal", // the header
             {padding: new go.Margin(0, 10)},
             GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
-            GO(go.TextBlock, textStyle150(), new go.Binding("text", "desc"),),
+            GO(go.TextBlock, textStyleLeft150(), new go.Binding("text", "desc"),),
         ),
         { click: (e, obj) => showDetails(e, obj) }
     );

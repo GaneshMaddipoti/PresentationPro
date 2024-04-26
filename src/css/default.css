@@ -114,3 +114,12 @@ a {
     line-height: 150%;
     margin-top:10px;
 }
+
+ul{
+    margin: 0px;
+    padding-left: 20px;
+}
+
+li.a {
+  list-style-type: circle;
+}

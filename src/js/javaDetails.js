@@ -91,29 +91,38 @@ It contains <br/>
 </ul>
 <br/>
 <b>Execution</b><br/>
-1) Compile the source code using javac, $javac Program.java -> outputs Program.class <br/>
-2) Execute the class file using java,   $java Program                                   <br/>
-3) Compile and execute single source file using java, $java Program.java            <br/>
+1) Compile the source code using javac <br/>
+&emsp; $javac Program.java -> outputs Program.class <br/>
+2) Execute the class file using java <br/>
+&emsp; $java Program                                   <br/>
+3) Compile and execute single source file using java <br/>
+&emsp; $java Program.java            <br/>
 4) Import tells where to find the class <br/>
-5) import java.io.*; will import only classes in that package not sub packages <br/>
-6) import java.io.*; will not import all classes in that package but needed ones <br/>
-7) Listing all import statements for readability, * for shorten the imports <br/>
-8) import java.lang.*; is by default placed, we no need to place <br/>
-9) Java automatically looks in the current package for classes <br/>
-10) import java.util.Date; import java.sql.Date; - will result compilation error <br/>
-11) jar -cvf (create, verbose, filename) sample.jar -C temp/ - to create jar containing the file in directory<br/>
+5) import java.io.*; <br/>
+&emsp; will import only classes in that package not sub packages <br/>
+&emsp; will not import all classes in that package but needed ones <br/>
+6) Listing all import statements for readability, <br/>
+&emsp; * for shorten the imports <br/>
+7) import java.lang.*; is by default placed, we no need to place <br/>
+8) Java automatically looks in the current package for classes <br/>
+9) import java.util.Date; import java.sql.Date; <br/>
+&emsp; - will result compilation error <br/>
+10) jar -cvf (create, verbose, filename) sample.jar <br/>
+&emsp; -C temp/ (to create jar containing the files in temp directory)<br/>
+11) javadoc - to create documentation of the class/application <br/>
+12) A Java program begins execution with its main method <br/>
 <br/>
 <b>javac</b><br/>
 Java Compiler converts source files(.java) to bytecode(.class) <br/>
 Bytecode is a special format that JVM can run <br/>
-By default compiler will place class files in same directory as source files <br/>
+Compiler will place class files in same directory as source files <br/>
 Using -d option, we can specify destination directory for class files <br/>
 Using -cp option, we can specify classpath location/jar to find <br/>
-We can use * wild card with -cp to include all classes and jars in that directory <br/>
+We can use * with -cp to include all classes and jars in that directory <br/>
 <br/>
 <b>JRE</b><br/>
 Java runtime environment(JRE) contain Java API and JVM <br/>
-java launches Java virtual machine(JVM) before running the program <br/>
+java launches Java virtual machine(JVM) before the program <br/>
 `;
 
 
@@ -121,23 +130,13 @@ let javaSyntaxHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 Syntax
 </div>
-<b>Literals</b><br/>
-<ul>
-<li>We need literals to represent data</li>
-<li>It's a character or word which denotes either integers, floats, string,
-and boolean values <br/>
-(Ex: 6, 23.332, 'A', "Hello", true, '\u0044'(unicode literal D))</li>
-<li>We can not put commas in a numberic literal, but we can use _ for readability <br/>
-Ex: long income = 1_234_456l;</li>
-</ul>
-<b>Integer Literals</b> <br/>
-<ul>
-<li>Decimal Base 10 - use digits(0-9) no prefix of any kind</li>
-<li>octal Base 8 - use only digits(0-7), and preceding 0</li>
-<li>Hexa decimal Base 16 - use digits (0-9) and A,B,C,D,E,F preceding 0x</li>
-</ul>
-<b>Floating point Literals</b> <br/>
-Ex: double val = 23.456;
+// used for comments <br/>
+/* <br/>
+ *<br/>
+*/ used for multi line comments <br/>
+/** <br/>
+ *<br/>
+*/ used for Java doc comments <br/>
 <br/>
 <b>Keywords</b><br/>
 It's a reserved word, have predefined meaning in java language <br/>
@@ -158,10 +157,34 @@ Ex : +, -, *, >, etc... <br/>
 <tr><td>9)</td><td>Type check</td><td>instanceOf</td></tr>
 </table>
 <br/>
-<b>Expressions</b><br/>
-An expression is a coding construct, that evaluates to a single value <br/>
-This will be the code segment on the right side of = operator, in an assignment or declaration statement <br/>
-Ex : (orderNumber + 100)
+
+<b>Casting</b><br/>
+We can change the data type from one to another using casting <br/>
+Ex: byte value = (byte) 1000
+`;
+
+let javaLiteralHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+How to specify data/constant in code <br/>
+</div>
+<b>Literals</b><br/>
+<ul>
+<li>We need literals to represent data</li>
+<li>It's a character or word which denotes either integers, floats, string,
+and boolean values <br/>
+(Ex: 6, 23.332, 'A', "Hello", true, '\u0044'(unicode literal D))</li>
+<li>We can not put commas in a numberic literal, but we can use _ for readability <br/>
+Ex: long income = 1_234_456l;</li>
+</ul>
+<b>Integer Literals</b> <br/>
+<ul>
+<li>Decimal Base 10 - use digits(0-9) no prefix of any kind</li>
+<li>octal Base 8 - use only digits(0-7), and preceding 0</li>
+<li>Hexa decimal Base 16 - use digits (0-9) and A,B,C,D,E,F preceding 0x</li>
+</ul>
+<b>Floating point Literals</b> <br/>
+Ex: double val = 23.456;
+<br/>
 `;
 
 let javaSourceCodeHTML = `
@@ -170,10 +193,9 @@ How source code is written and organized ?
 </div>
 <b>Source Code</b><br/>
 Source is organized into Packages <br/>
-And Package contains files containing high level types - classes, interfaces, records, enums <br/>
-A file should contain only one public class, and that class name should match with file name <br/>
-Inside class/interface we use syntax to write the code <br/>
-A Java program begins execution with its main method - its an entry point <br/>
+Package contains files <br/>
+File contains high level types - classes, interfaces, records, enums <br/>
+A file should contain only one public type, and that type name should match with file name <br/>
 <br/>
 
 <b>Package</b>
@@ -183,21 +205,7 @@ A Java program begins execution with its main method - its an entry point <br/>
     <li>To provide access protection</li>
     <li>If package name is not present, it belongs to default package</li>
 </ul>
-Java is case sensitive, while declaring variables, methods, classes, literals <br/>
-// used for comments <br/>
-/* <br/>
-<br/>
-*/ used for multi line comments <br/>
-/** <br/>
-<br/>
-*/ used for Java doc comments - used by javadoc tool for documentation purpose <br/>
-<br/>
-<b>Keyword</b></br/>
-Its a reserved word, have predefined meaning in java language <br/>
-Ex: int, byte, for, which, try, catch,  etc...<br/>
-<b>Casting</b><br/>
-We can change the data type from one to another using casting <br/>
-Ex: byte value = (byte) 1000`;
+`;
 
 let javaPropertyHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
@@ -338,25 +346,25 @@ And these names are called identifiers and there are rules for legal identifiers
 <li>You can’t use java keyword as an identifier</li>
 <li>Identifiers are case sensitive.</li>
 </ol>
+<br/>
+Java is case sensitive, while declaring variables, methods, classes, literals <br/>
+<br/>
 `;
 
 let javaStatementHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 How to represent an instruction to execute by the system?
 </div>
-<b>Statement </b><br/>
-It's a complete command to be executed <br/>
-It can include assignment/one or more expressions <br/>
-Ex : total = orderValue + tax; <br/>
-<br/>
 <b>Expression </b><br/>
 An expression is a construct with operator and operands, that evaluates to a single value <br/>
 This will be the code segment on the right side of = operator, in an assignment or declaration statement <br/>
 Ex : (orderNumber + 100) <br/>
 <br/>
-Expression contains
-<a href="#" onclick="showToolTip1(\'' + javaLiteralHTML + '\')">Literals</a>,
-<a href="#" onclick="showToolTip1(\'' + javaOperatorsHMTL + '\')">operators</a>.
+<b>Statement </b><br/>
+It's a complete command to be executed <br/>
+It can include assignment/one or more expressions <br/>
+Ex : total = orderValue + tax; <br/>
+<br/>
 `;
 
 let javaArraysHTML = `
@@ -420,27 +428,26 @@ when you are making a lot of modifications to strings of characters, better to u
 
 let javaClassHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-How to create custom data types/represent real time objects ?
+How to create objects/custom data types?
 </div>
 <b>Class</b><br/>
 <ul>
-<li>It's a template to create objects, and we use it to create custom data types</li>
-<li>Class contain properties and methods which operate on properties</li>
-<li>Class names and method names are also should follow legal identifier rules <br/>
+<li>It is a template to create objects/custom data types</li>
+<li>Class encapsulates properties and methods</li>
 <li>Objects are created by using constructor method</li>
-<li>Initialization blocks run when the class first loaded (static initialization block) <br/>
-or when an instance is created (an instance initialization block)</li>
+<li>Initialization blocks <br/>
+&emsp; static block - run when the class first loaded<br/>
+&emsp; instance block - when an instance is created </li>
 </ul>
 <b>Access Modifiers </b><br/>
 We can modify class access using public, default <br/>
-Access : extends and object creation <br/>
 default - access to all classes in that package <br/>
 public - access to all classes in application <br/>
 <br/>
 <b>Non access modifiers </b> <br/>
-final - it can't be subclassed <br/>
+final - it cant be subclassed <br/>
 abstract - it cant be initialized <br/>
-strictfp - all class methods are complied to IEEE standard for FP. <br/>
+strictfp - all class methods are complied to IEEE standard for FP <br/>
 <br/>
 <b>Constructors</b><br/>
 Objects are constructed. <br/>
