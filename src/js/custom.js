@@ -128,10 +128,6 @@ function showDetails(e, obj) {
         const diagram = node.diagram;
         let details = node.data;
         showToolTip(node, diagram, null);
-        $("li").click(function (){
-            $(this).css("color","#555");
-            $(this).css("list-style-type","circle")
-        });
     }
 }
 

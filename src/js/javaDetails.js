@@ -97,32 +97,28 @@ It contains <br/>
 &emsp; $java Program                                   <br/>
 3) Compile and execute single source file using java <br/>
 &emsp; $java Program.java            <br/>
-4) Import tells where to find the class <br/>
-5) import java.io.*; <br/>
-&emsp; will import only classes in that package not sub packages <br/>
-&emsp; will not import all classes in that package but needed ones <br/>
-6) Listing all import statements for readability, <br/>
-&emsp; * for shorten the imports <br/>
-7) import java.lang.*; is by default placed, we no need to place <br/>
-8) Java automatically looks in the current package for classes <br/>
-9) import java.util.Date; import java.sql.Date; <br/>
-&emsp; - will result compilation error <br/>
-10) jar -cvf (create, verbose, filename) sample.jar <br/>
+4) jar -cvf (create, verbose, filename) sample.jar <br/>
 &emsp; -C temp/ (to create jar containing the files in temp directory)<br/>
-11) javadoc - to create documentation of the class/application <br/>
-12) A Java program begins execution with its main method <br/>
+5) javadoc - to create documentation of the class/application <br/>
+6) A Java program begins execution with its main method <br/>
 <br/>
 <b>javac</b><br/>
 Java Compiler converts source files(.java) to bytecode(.class) <br/>
+&emsp; $javac packagea/ClassA.java <br/>
+And * to mention compile all classes in that directory (not subdir) <br/>
+&emsp; $javac packagea/\*.java <br/>
 Bytecode is a special format that JVM can run <br/>
 Compiler will place class files in same directory as source files <br/>
 Using -d option, we can specify destination directory for class files <br/>
-Using -cp option, we can specify classpath location/jar to find <br/>
+Using -cp option, we can specify classpath location/jar to compile <br/>
 We can use * with -cp to include all classes and jars in that directory <br/>
 <br/>
-<b>JRE</b><br/>
+<b>java</b><br/>
 Java runtime environment(JRE) contain Java API and JVM <br/>
 java launches Java virtual machine(JVM) before the program <br/>
+We can pass arguments to the program <br/>
+&emsp; $java Application param1 "param   2" <br/>
+Using -cp option, we can specify classpath location/jar to run <br/>
 `;
 
 
@@ -197,7 +193,6 @@ Package contains files <br/>
 File contains high level types - classes, interfaces, records, enums <br/>
 A file should contain only one public type, and that type name should match with file name <br/>
 <br/>
-
 <b>Package</b>
 <ul>
     <li>It is used to group related classes </li>
@@ -205,6 +200,22 @@ A file should contain only one public type, and that type name should match with
     <li>To provide access protection</li>
     <li>If package name is not present, it belongs to default package</li>
 </ul>
+<br/>
+<b>Importing classes </b><br/>
+1) Import tells where to find the class <br/>
+2) import java.io.*; <br/>
+&emsp; will import only classes in that package not sub packages <br/>
+&emsp; will not import all classes in that package but needed ones <br/>
+3) Try to list all import statements for readability, <br/>
+&emsp; and * for shorten the imports <br/>
+4) import java.lang.*; is by default placed, we no need to place <br/>
+5) Java automatically looks in the current package for classes <br/>
+6) import java.util.Date; import java.sql.Date; <br/>
+&emsp; - will result compilation error, <br/>
+&emsp; - it can be resolved by using fully qualified class name <br/>
+7) explicitly importing using class name, takes precedence over * <br/>
+&emsp; import java.sql.Date; <br/>
+&emsp; import java.util.*; &emsp; &emsp; - it works <br/>
 `;
 
 let javaPropertyHTML = `
@@ -434,11 +445,15 @@ How to create objects/custom data types?
 <ul>
 <li>It is a template to create objects/custom data types</li>
 <li>Class encapsulates properties and methods</li>
-<li>Objects are created by using constructor method</li>
+<li>Objects are created by using constructor method <br/>
+&emsp; Order order = new Order(); <br/></li>
 <li>Initialization blocks <br/>
 &emsp; static block - run when the class first loaded<br/>
 &emsp; instance block - when an instance is created </li>
-</ul>
+<li>Fields and code blocks are run in the order they appear</li>
+<li>Constructor runs after fields and code blocks </li>
+</ul><br/>
+
 <b>Access Modifiers </b><br/>
 We can modify class access using public, default <br/>
 default - access to all classes in that package <br/>
