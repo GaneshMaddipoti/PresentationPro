@@ -58,7 +58,7 @@ Content
 
 let javaHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-How to give instructions to the system ?
+Why to learn java ?
 </div>
 <b>Programming Language</b><br/>
 A programming language is a set of instructions written by a programmer to deliver instructions <br/>
@@ -75,6 +75,148 @@ Created by James Gosling and team at Sun micro systems in 1991 <br/>
 3) Object Oriented <br/>
 4) Statically typed <br/>
 5) Multi threaded <br/>
+<br/>
+<b>Answer is</b><br/>
+Java is able to manage large applications with more code and data through OOP concepts, <br/>
+1) Encapsulation <br/>
+2) Abstraction <br/>
+3) Inheritance <br/>
+4) Polymorphism <br/>
+`;
+
+let javaEncapsulationHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+What is encapsulation ?
+</div>
+<b>Encapsulation</b><br/>
+<ul>
+<li>Encapsulation is a mechanism which puts attributes and behavior together</li>
+<li>And hides the information and implementation to the real world by access modifiers</li>
+<li>Through  encapsulation we will get maintainability, flexibility, and extensibility, <br/>
+ability to make changes in your implementation code with out breaking the code of the others.</li>
+<li>We will hide data by using private access modifiers and gives to others public accessor methods</li>
+</ul>
+<br/>
+<div class="sourceCode">public class Order {
+    private Integer id;
+    private Items[] items;
+    private Buyer buyer;
+    private Float cost;
+    public Float getPrice() {
+        //calculation of total price
+    }
+}
+</div>
+`;
+
+let javaAbstractionHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+What is abstraction ?
+</div>
+<b>Abstraction</b><br/>
+<ul>
+<li>Abstraction means giving the user essential and salient features </li>
+<li>which represents unique behavior of that entity and ignoring non essential things</li>
+<li>The powerful way to manage abstraction is through the use of hierarchical classification</li>
+</ul>
+<br/>
+<div class="sourceCode">public class Order {
+    private Integer id;
+    private Items[] items;
+    private Buyer buyer;
+    private Float cost;
+}
+
+public class Buyer {
+}
+
+public class Item {
+}
+</div>
+`;
+
+let javaInheritanceHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+What is inheritance ?
+</div>
+<b>Inheritance</b><br/>
+<ul>
+<li>It is the process by which one object acquires properties of other object.</li>
+<li>Inheritance is for instance methods, not for static members and instance variables </li>
+<li>if we write same static members/instance variables in subclass, parent members will get hidden </li>
+<li>The most common reasons to use inheritance are <br/>
+    1). To promote code reuse <br/>
+    2). To use polymorphism</li>
+<li>Code reuse through inheritance means that methods with generic functionality, <br/>
+put them in super class and extend that super class in sub classes <br/>
+</li>
+<li>In Polymorphism, you can declare super class type, and you can pass any sub class types to that. <br/>
+    It is used when objects satisfy [is-a] relationship.</li>
+</ul>
+<br/>
+<div class="sourceCode">class Order {
+  public void calculateTotal() {
+    System.out.println("Order total:");
+  }
+  public void calculateTotal(Float tax) {
+    System.out.println("Order total with tax:")
+  }
+}
+
+class CashOrder extends Order {
+  //All public members of Order class inherited
+  //We have ability to override the super class behavior
+  public void calculateTotal() { //run-time polymorphism
+    System.out.println("Cash Order Total:");
+  }
+}
+</div>
+`;
+
+let javaPolymorphismHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+What is polymorphism ?
+</div>
+<b>Polymorphism</b><br/>
+It is a feature that allows one interface to be used for a general class of actions.<br/>
+1). Compile time polymorphism: <br/>
+    In this linking between the object reference and the method it invokes will happen at compile time <br/>
+    Ex: overloading. <br/>
+    2). Run time polymorphism:  <br/>
+    In this linking between the object reference and the method it invokes will happen at run time. <br/>
+    Ex:overriding <br/>
+<br/>
+<div class="sourceCode">class Order {
+  public void calculateTotal() {
+    System.out.println("Order total:");
+  }
+  public void calculateTotal(Float tax) { //compile-time polymorphism
+    System.out.println("Order total with tax:")
+  }
+}
+
+class CashOrder extends Order {
+  public void calculateTotal() { //run-time polymorphism
+    System.out.println("Cash Order Total:");
+  }
+}
+
+class DebitOrder extends Order {
+  public void calculateTotal() {
+    System.out.println("Debit order:");
+  }
+}
+</div>
+<br/>
+<b>Overloading rules </b><br/>
+1) Argument list should differ <br/>
+<br/>
+<b>Overriding rules </b><br/>
+@Override annotation tells the compiler we are overriding <br/>
+1) Signature must be same <br/>
+2) Overridden method must be less secured than parent <br/>
+3) Overridden method can not through new or broader exceptions than parent <br/>
+4) the return type should be same or subtype of parent <br/>
 `;
 
 let jdkHTML = `
@@ -138,21 +280,6 @@ Syntax
 It's a reserved word, have predefined meaning in java language <br/>
 Ex: int, byte, for, which, try, catch, class, interface, enum, etc...<br/>
 <br/>
-<b>Operators</b><br/>
-The operator performs an operation on variables/literals its used with <br/>
-Ex : +, -, *, >, etc... <br/>
-<table>
-<tr><td>1)</td><td width="300px">Assignment</td><td>=</td></tr>
-<tr><td>2)</td><td >Compound Assignment </td><td>+=, -=, *=, /=, etc...</td></tr>
-<tr><td>3)</td><td >Arithmetic</td><td>+, -, *, /, %</td></tr>
-<tr><td>4)</td><td>Increment & Decrement</td><td>++, --</td></tr>
-<tr><td>5)</td><td>Relational</td><td><, <=, >, >=, ==, !=</td></tr>
-<tr><td>6)</td><td>Logical</td><td>&, |, ^, !, &&, ||</td></tr>
-<tr><td>7)</td><td>Bitwise</td><td>&, |, ^</td></tr>
-<tr><td>8)</td><td>Conditional</td><td>? :/td></tr>
-<tr><td>9)</td><td>Type check</td><td>instanceOf</td></tr>
-</table>
-<br/>
 
 <b>Casting</b><br/>
 We can change the data type from one to another using casting <br/>
@@ -172,15 +299,23 @@ and boolean values <br/>
 <li>We can not put commas in a numberic literal, but we can use _ for readability <br/>
 Ex: long income = 1_234_456l;</li>
 </ul>
+<br/>
 <b>Integer Literals</b> <br/>
 <ul>
-<li>Decimal Base 10 - use digits(0-9) no prefix of any kind</li>
+<li>binary Base 2 - use only digits(0,1), and preceding 0b or 0B</li>
 <li>octal Base 8 - use only digits(0-7), and preceding 0</li>
-<li>Hexa decimal Base 16 - use digits (0-9) and A,B,C,D,E,F preceding 0x</li>
+<li>Decimal Base 10 - use digits(0-9) no prefix of any kind</li>
+<li>Hexa decimal Base 16 - use digits (0-9) and A,B,C,D,E,F/a,b,c,d,e,f preceding 0x or 0X</li>
 </ul>
-<b>Floating point Literals</b> <br/>
-Ex: double val = 23.456;
 <br/>
+<b>Floating point Literals</b> <br/>
+Ex: double val = 23.456;<br/>
+<br/>
+<b>Character Literals </b></br/>
+Ex: char ch = 'A'; <br/>
+<br/>
+<b>String Literals </b><br/>
+Ex: String str = "hello"; <br/>
 `;
 
 let javaSourceCodeHTML = `
@@ -243,6 +378,7 @@ public - access to all classes in application <br/>
 <b>Non-access Modifiers</b> <br/>
 final - it can't be re-assigned <br/>
 volatile - will always access from memory(useful in multithreading) <br/>
+transient - it will not be serialized with class <br/>
 `;
 
 let javaMethodHTML = `
@@ -256,6 +392,9 @@ Methods are defined as : <br/>
 public String getName(String initial, String suffix) {}<br/>
 <br/>
 Method definition contains Modifier, return type, method name, and arguments <br/>
+Method can contain variable arguments (int...) <br/>
+1) there should be only one var-arg in argument list <br/>
+2) and it should be the las one in argument list <br/>
 <br/>
 <b>Access Modifiers </b><br/>
 We can modify method access using public, protected, default, private <br/>
@@ -266,13 +405,13 @@ protected - access to all classes in that package and sub classes of other packa
 public - access to all classes in application <br/>
 <br/>
 <b>Non-access Modifiers</b> <br/>
-final - if applied to class, it can't be subclassed <br/>
-&emsp;&emsp;&emsp; - if applied to method, it can't be override <br/>
-&emsp;&emsp;&emsp; - if applied to property, it can't be re-assigned <br/>
-abstract - if applied to class, it cant be initialized <br/>
-&emsp;&emsp;&emsp; - if applied to methods, no need to implement it<br/>
-strictfp - if applied to class, all methods are complied to IEEE standard for FP. <br/>
-&emsp;&emsp;&emsp; - if applied to method, only that method is complied to IEEE FP.<br/>
+final - it can't be override <br/>
+abstract - no need to implement it<br/>
+strictfp - that method is complied to IEEE FP.<br/>
+static - member of the shared class object <br/>
+default - used in an interface to implement default behavior <br/>
+synchronized - used in multi threading, only one thread can access at a time <br/>
+native - used when interacting code written in other language <br/>
 <br/>
 
 `;
@@ -288,20 +427,27 @@ Data is declared of type primitive, array, string, and object <br/>
 <b>Primitives</b><br/>
 There are 8 primitive data types
 <table>
-<tr><td>1)</td><td width="200px">boolean</td><td>1 bit</td></tr>
-<tr><td>2)</td><td>byte</td><td>1 byte</td></tr>
-<tr><td>3)</td><td>short</td><td>2 byte</td></tr>
-<tr><td>4)</td><td>int</td><td>4 byte</td></tr>
-<tr><td>5)</td><td>long</td><td>8 byte</td></tr>
-<tr><td>6)</td><td>float</td><td>4 byte</td></tr>
-<tr><td>7)</td><td>double</td><td>8 byte</td></tr>
-<tr><td>8)</td><td>char</td><td>2 byte</td></tr>
+<tr><td>1)</td><td width="200px">boolean</td><td width="200px">1 bit</td><td>true/false</td></tr>
+<tr><td>2)</td><td>byte</td><td>1 byte</td><td>-128 to 127</td></tr>
+<tr><td>3)</td><td>short</td><td>2 byte</td><td>-32768 to 32767</td></tr>
+<tr><td>4)</td><td>int</td><td>4 byte</td><td>-2^31 to 2^31-1</td></tr>
+<tr><td>5)</td><td>long</td><td>8 byte</td><td>-2^63 to 2^63-1</td></tr>
+<tr><td>6)</td><td>float</td><td>4 byte</td><td>Ex: 123.45f</td></tr>
+<tr><td>7)</td><td>double</td><td>8 byte</td><td>Ex: 123.456</td></tr>
+<tr><td>8)</td><td>char</td><td>2 byte</td><td>0 to 65535</td></tr>
 </table>
 <ul>
 <li>Integer literals are int by default, we can put l or L as suffix to treat it as long</li>
 <li>Float literals are double by default, f or F as suffix to treat it as float</li>
 <li>For precise calculations use BigDecimal, because float, double will behave inconsistently</li>
+<li>All the primitives should be initialized with value before use, not null</li>
 </ul>
+<br/>
+<b>Local Variable Type inference </b><br/>
+The compiler will infer the type of the local variable by its declaration <br/>
+var length = 50; <br/>
+var can not be null, Ex : var length = null;(invalid) <br/>
+<br/>
 <b>Enums</b><br/>
 Java lets you restrict a variable to having one of only a few predefined values<br/>
 Ex: enum CoffeeSize {BIG,HUGE,SMALL,LARGE}; <br/>
@@ -318,18 +464,6 @@ Initialize: Arrays initialization means that putting things into it <br/>
 Ex: int[] marks = {11, 12, 13, 14}; <br/>
 &emsp;&emsp; marks[0] = 21; <br/>
 They are indexed from 0 <br/>
-<br/>
-<b>Strings</b><br/>
-<ul>
-<li>A string is an object that contains a sequence of characters. <br/>
-    Ex: String name = "Sample sentence."; <br/></li>
-<li>Strings are immutable</li>
-<li>To make memory efficient, the JVM sets aside a memory called the “String Constant Pool”.</li>
-<li>For string literal, it checks the pool to see if an identical string already exists. <br/>
-If match is found, the reference to the new literal is directed to the existing string.</li>
-</ul>
-Ex: String s = “abc”; <br/>
-&emsp;&emsp;String s = new String(“abc”); – in this case 2 objects will be created in pool and in heap<br/>
 `;
 
 let javaIdentifiersHTML = `
@@ -342,16 +476,20 @@ Where to store data temporarily during processing ?
 Ex: length = 120;
 </li>
 <li>A variable is statically typed to a primitive or object <br/>
-Ex: int length = 120;
+Ex: int length = 120, width = 60;
 </li>
 </ul>
+<br/>
 <b>Identifiers</b><br/>
 All the java components(classes, interfaces, enums, methods, variables) need names <br/>
 And these names are called identifiers and there are rules for legal identifiers.<br/>
+Classes - Camel case with first letter capital <br/>
+Methods - Camel case with first letter small <br/>
+Constants - All upper case with (_) to separate words(Snake) <br/>
 <br/>
 <b>Rules</b><br/>
 <ol>
-<li>Identifiers must start with a letter($),(_)</li>
+<li>Identifiers must start with a letter(currency symbol $,£, etc...),(_)</li>
 <li>After first character, they can contain numbers also.</li>
 <li>There is no limit on number of characters</li>
 <li>You can’t use java keyword as an identifier</li>
@@ -366,16 +504,36 @@ let javaStatementHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 How to represent an instruction to execute by the system?
 </div>
+<b>Operators</b><br/>
+The operator performs an operation on variables/literals its used with <br/>
+Ex : +, -, *, >, etc... <br/>
+<table>
+<tr><td>1)</td><td width="300px">Assignment</td><td>=</td></tr>
+<tr><td>2)</td><td >Compound Assignment </td><td>+=, -=, *=, /=, etc...</td></tr>
+<tr><td>3)</td><td >Arithmetic</td><td>+, -, *, /, %</td></tr>
+<tr><td>4)</td><td>Increment & Decrement</td><td>++, --</td></tr>
+<tr><td>5)</td><td>Relational</td><td><, <=, >, >=, ==, !=</td></tr>
+<tr><td>6)</td><td>Logical</td><td>&, |, ^, !, &&, ||</td></tr>
+<tr><td>7)</td><td>Bitwise</td><td>&, |, ^, ~</td></tr>
+<tr><td>8)</td><td>Conditional</td><td>? : </td></tr>
+<tr><td>9)</td><td>Type check</td><td>instanceOf</td></tr>
+</table>
+<br/>
 <b>Expression </b><br/>
 An expression is a construct with operator and operands, that evaluates to a single value <br/>
 This will be the code segment on the right side of = operator, in an assignment or declaration statement <br/>
 Ex : (orderNumber + 100) <br/>
 <br/>
 <b>Statement </b><br/>
-It's a complete command to be executed <br/>
+It's a complete command to be executed terminated by ; <br/>
 It can include assignment/one or more expressions <br/>
 Ex : total = orderValue + tax; <br/>
 <br/>
+<b>Declaration</b><br/>
+Ex: int length; <br/>
+<br/>
+<b>Initialization </b><br/>
+Ex: length = 50; <br/>
 `;
 
 let javaArraysHTML = `
@@ -417,6 +575,7 @@ If match is found, the reference to the new literal is directed to the existing 
 <b>Creating new Strings </b><br/>
 String s = “abc”; <br/>
 String s = new String(“abc”); – in this case 2 objects will be created in pool and in heap<br/>
+String str = new String("abc").intern(); - instructs the jvm to using string pool <br/>
 <br/>
 <b>Methods in string class </b>
 <ol>
@@ -452,6 +611,8 @@ How to create objects/custom data types?
 &emsp; instance block - when an instance is created </li>
 <li>Fields and code blocks are run in the order they appear</li>
 <li>Constructor runs after fields and code blocks </li>
+<li>In a method, this refers to current object <br/>
+<li>In a method, super refers to super class object </li>
 </ul><br/>
 
 <b>Access Modifiers </b><br/>
@@ -460,9 +621,12 @@ default - access to all classes in that package <br/>
 public - access to all classes in application <br/>
 <br/>
 <b>Non access modifiers </b> <br/>
-final - it cant be subclassed <br/>
+final - it cant be extended/subclassed <br/>
 abstract - it cant be initialized <br/>
+static - used for static nested classes within class <br/>
 strictfp - all class methods are complied to IEEE standard for FP <br/>
+sealed - only extended by specific list of subclasses <br/>
+non-sealed - subclass of a sealed class permits potentially unnamed subclasses <br/>
 <br/>
 <b>Constructors</b><br/>
 Objects are constructed. <br/>
@@ -473,12 +637,14 @@ They have no return types, but name must exactly match with the class name. <br/
 Typically, constructors are used to initialize instance variable state. <br/>
 If you don’t type a constructor, the compiler will generate implicitly.<br/>
 If you type any constructor then compiler wont generate no-arg constructor <br/>
+First line of every constructor, is either this() or super() <br/>
 <br/>
 <b>Abstract Class</b><br/>
 We get code re-use through inheritance by placing all common functionality in super class <br/>
 And leave the specific behavior to sub classes by putting abstract keyword before that method<br/>
 Even one method is abstract total class is abstract so we have to specify the class as abstract.<br/>
 You can’t instantiate an abstract class. <br/>
+We can abstract to only instance methods, not to variables, statics, or constructors <br/>
 <div class="sourceCode">public abstract class Animal{
     public abstract void eat();
 }</div>
@@ -506,6 +672,23 @@ Nested classes can also be static like properties and methods <br/>
         nestedClass.doNothing();
     }
 }</div>
+<br/>
+<b>Static Members </b><br/>
+static members of class, are stored in shared class object <br/>
+they can be accessed using class name itself (Animal.count) <br/>
+static methods/blocks can not access not static members <br/>
+<br/>
+<b>Object Initialization </b><br/>
+When you create object, CashOrder order = new CashOrder(); <br/>
+1) Initialize super class first, Order class <br/>
+2) Process all static variable declarations <br/>
+3) Process all static initialization blocks in order <br/>
+4) Process all instance variable declarations <br/>
+5) Process all instance initialization blocks in order <br/>
+6) Process the constructor <br/>
+<br/>
+All static and instance variables, get assigned default value (non-final) <br/>
+By the time constructor completes, all final instance variables needs to be assigned a value <br/>
 `;
 
 let javaInterfaceHTML = `
@@ -569,15 +752,26 @@ Can we change the control flow based on a condition ?
 The if & switch statements are decision / conditional controls  <br/>
 that allow your program to change the control flow on the result of logical test.<br/>
 <br/>
-<div class="sourceCode">if (condition) {
+<b>if-else statement </b><br/>
+<div class="sourceCode">if (condition) { //here condition is boolean expression
     //statements to execute if true
 } else if (condition) {
     //statements to execute else if ture
 } else {
     //statements to execute else
 }
-
-switch (condition) { //condition can be int, string, enum
+</div>
+Java 16, introduces shorter syntax for instanceOf in if statement <br/>
+<div class="sourceCode">if (length instanceOf Integer data) {
+    //data can be used as Integer
+    //better not to re-assign data
+}
+</div>
+<br/>
+<b>Switch statement </b><br/>
+Condition can be anything that can be converted to int, string, enum, var <br/>
+Variables used for case statements, should be compile time constants <br/>
+<div class="sourceCode">switch (condition) {
     case 0:
         System.out.println(0);
         break;
@@ -588,6 +782,19 @@ switch (condition) { //condition can be int, string, enum
         System.out.println("default");
         break;
 }
+</div>
+<br/>
+<b>Switch Expression</b><br/>
+Java 14, introduced switch expression to shorten the syntax <br/>
+<div class="sourceCode">var result = switch(condition) {
+    case 0 -> "sunday";
+    case 1 -> "monday";
+    case 2 -> {
+        yield "some value";
+    }
+    case 3,4 -> "other value";
+    default -> "Invalid";
+};
 </div>
 `;
 
@@ -605,6 +812,7 @@ We can use while, do-while, or for loops <br/>
     &emsp; &emsp; but you want to continue as long as some condition is true. <br/></li>
 <li>do-while - similar to while, but the code in do loop is guaranteed to execute at least once. <br/></li>
 <li>for - when you already know how many times you need to execute the statements <br/>
+<li>for each - when you want to iterate over a collection/array <br/>
 <div class="sourceCode">while(condition) {
     //Statements to execute while true
 }
@@ -615,7 +823,12 @@ do {
 
 for(int i=0; i<5; i++) {
    //Statements to execute for condition met times
-}</div>
+}
+
+for(Integer val: values) {     //array/iterable collection
+    //statements
+}
+</div>
 </li>
 <li>Break : Execution jumps immediately to the first statement after the loop.<br/></li>
 <li>Continue : Execution jumps immediately to the next iteration by skipping below code. <br/></li>
@@ -707,14 +920,15 @@ They must be called with in synchronized block
 </li>
 </ul>`;
 
-
-
 let javaWrapperClassHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 Why we need wrapper classes for primitive data types ?
 </div>
 <b>Wrapper classes </b><br/>
 In Java, everything is an object, except primitives <br/>
+Primitives can not be nullable, but wrapper objects are <br/>
+All wrapper classes extends Number class, which has helper methods <br/>
+Ex: .intValue(), doubleValue(),min(),sum() - for manipulating data <br/>
 While using collections and generics these wrapper classes come into play <br/>
 A wrapper class provides the basic operations like the corresponding primitive data type <br/>
 as well as some information about the primitive data type stored in it, which can not be stored in primitive itself <br/>
@@ -730,6 +944,10 @@ char        - Character         <br/>
 Wraparound will happen for byte, short, int, long data types <br/>
 Integer wraparounds (Integer.MIN_VALUE - 1)(-2147483648 -1) to 2147483647 (Integer.MAX_VALUE) <br/>
 Integer wraparounds (Integer.MAX_VALUE + 1)(2147483647+1) to -2147483648 (Integer.MIN_VALUE) <br/>
+<br/>
+<b>Creating wrapper objects</b><br/>
+Ex: Integer length = Integer.valueOf(1234); <br/>
+Ex: Integer length = Integer.valueOf("1234"); <br/>
 `;
 
 let javaCollectionsHTML = `
