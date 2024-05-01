@@ -3,6 +3,11 @@ function textStyle() {
         { margin: 10, width: 100, textAlign: "center", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
     ];
 }
+function textStyleLeft() {
+    return [
+        { margin: 10, width: 100, textAlign: "left", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
+    ];
+}
 
 function textStyle150() {
     return [

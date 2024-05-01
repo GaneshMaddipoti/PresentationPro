@@ -30,9 +30,9 @@ let javaNodeDataArray = [
 
 
     {key: "Class", desc: "class", group: "File", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,},
-    {key: "Property", desc: "properties", group: "Class", category: "simple", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
+    {key: "Property", desc: "properties", group: "Class", category: "simpleText100", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
 //    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
-    {key: "Method", desc: "methods", group: "Class", category: "simple", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
+    {key: "Method", desc: "methods", group: "Class", category: "simpleText100", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
 //
 //    {key: "Statement1", desc: "Integer amount = 195;", group: "Method", category: "simpleText", toolTipHTML: javaStatementHTML, img: "img/null.svg"},
 //    {key: "Statement2", desc: "if(rate !=0) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaFlowControlsHTML, img: "img/null.svg"},
@@ -57,14 +57,14 @@ let javaNodeDataArray = [
     {key: "Java-Streams", desc: "Streams", group:"Java API", category: "simple", toolTipHTML: javaStreamsHTML},
 
     {key: "Java-Syntax", desc: "Syntax", isGroup: true, group: "Java", expand: true, category: "grid2", toolTipHTML: javaSyntaxHTML},
-    {key: "Java-Literals", desc: "Literals", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaLiteralHTML},
-    {key: "Java-Identifiers", desc: "Identifiers", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaIdentifiersHTML},
-    {key: "Java-Datatypes", desc: "Datatypes", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaDataTypeHTML},
-    {key: "Java-Statements", desc: "Statements", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaStatementHTML},
-    {key: "Java-Conditions", desc: "Conditions", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaFlowControlsHTML},
-    {key: "Java-Loops", desc: "Loops", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaLoopsHTML},
-    {key: "Java-Exceptions", desc: "Exceptions", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaExceptionsHTML},
-    {key: "Java-Generics", desc: "Generics", group:"Java-Syntax", category: "simpleText", toolTipHTML: javaGenericsHTML},
+    {key: "Java-Literals", desc: "Literals", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLiteralHTML},
+    {key: "Java-Identifiers", desc: "Identifiers", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaIdentifiersHTML},
+    {key: "Java-Datatypes", desc: "Datatypes", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaDataTypeHTML},
+    {key: "Java-Statements", desc: "Statements", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaStatementHTML},
+    {key: "Java-Conditions", desc: "Conditions", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaFlowControlsHTML},
+    {key: "Java-Loops", desc: "Loops", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLoopsHTML},
+    {key: "Java-Exceptions", desc: "Exceptions", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaExceptionsHTML},
+    {key: "Java-Generics", desc: "Generics", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaGenericsHTML},
 
     {key: "Java-Semantics", desc: "Semantics", isGroup: true, group: "Java", expand: true, category: "grid3"},
 

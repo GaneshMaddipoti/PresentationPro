@@ -4,6 +4,7 @@ nodeTemplateMap.add("object", objectTemplate);
 nodeTemplateMap.add("simple", simpleTemplate);
 nodeTemplateMap.add("simple150", simple150Template);
 nodeTemplateMap.add("simpleText", simpleTextTemplate);
+nodeTemplateMap.add("simpleText100", simpleText100Template);
 nodeTemplateMap.add("simpleText150", simpleText150Template);
 nodeTemplateMap.add("token", tokenTemplate);
 nodeTemplateMap.add("menuItem", menuItemTemplate);
