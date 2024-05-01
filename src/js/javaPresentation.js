@@ -96,11 +96,11 @@ let javaNodeDataArray = [
     {key: "Java-DP-Strategy", desc: "Strategy", group:"Java-DP-Behavioral", category: "simple", toolTipHTML: javaDPStrategyHTML},
 
     {key: "Java-Solid", desc: "Solid Principles", isGroup: true, group: "Java-Semantics", category: "tree", expand: false},
-    {key: "Java-SP-singleResp", desc: "Single Responsibility", group:"Java-Solid", category: "simple", toolTipHTML: javaSPSingleRespHTML},
-    {key: "Java-SP-OpenClose", desc: "Open Close", group:"Java-Solid", category: "simple", toolTipHTML: javaSPOpenCloseHTML},
-    {key: "Java-SP-LiskovSubs", desc: "Liskov Substitution", group:"Java-Solid", category: "simple", toolTipHTML: javaSPLiskovSubHTML},
-    {key: "Java-SP-Interface-Segregation", desc: "Interface Segregation", group:"Java-Solid", category: "simple", toolTipHTML: javaSPInterfaceSegregationHTML},
-    {key: "Java-SP-DI", desc: "Dependency Inversion", group:"Java-Solid", category: "simple", toolTipHTML: javaSPDIHTML},
+    {key: "Java-SP-singleResp", desc: "Single Responsibility", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPSingleRespHTML},
+    {key: "Java-SP-OpenClose", desc: "Open Close", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPOpenCloseHTML},
+    {key: "Java-SP-LiskovSubs", desc: "Liskov Substitution", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPLiskovSubHTML},
+    {key: "Java-SP-Interface-Segregation", desc: "Interface Segregation", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPInterfaceSegregationHTML},
+    {key: "Java-SP-DI", desc: "Dependency Inversion", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPDIHTML},
 
 //    {key: "Execution", desc: "Execution", category: "simple", group: "System", img: "img/tools.svg", toolTipHTML: executionHTML},
     {key: "JDK", desc: "JDK", isGroup: true, group: "Java", category: "tree", toolTipHTML: jdkHTML, expand: false},

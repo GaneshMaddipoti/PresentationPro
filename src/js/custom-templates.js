@@ -36,12 +36,35 @@ const simpleTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
         { click: (e, obj) => showDetails(e, obj) }
 );
 
+const simple150Template = GO(go.Node, "Auto", {selectionAdorned: false},
+    {isShadowed: true, shadowBlur: 1, shadowColor: colors.blackShadow,
+           shadowOffset: new go.Point(5, 5), fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides},
+    GO(go.Shape, "RoundedRectangle",
+                {height: 40}, new go.Binding("height", "height"),
+                {width: 150}, new go.Binding("width", "width"),
+                {fill: colors.bgColorLight, stroke: "WhiteSmoke"}),
+    GO(go.TextBlock, textStyle150(), new go.Binding("text", "desc")),
+        { click: (e, obj) => showDetails(e, obj) }
+);
+
 const simpleTextTemplate =
     GO(go.Node, "Auto",{ selectionAdorned: false },{ fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides, isShadowed: false, shadowOffset: new go.Point(3, 3) },
         GO(go.Shape, {height: 15}, new go.Binding("height", "height"), new go.Binding("width", "width"),
             new go.Binding("figure", "shape"), { strokeWidth: 0, stroke: "#555", fill:"Transparent" }, new go.Binding("stroke", "color")),
         GO(go.Panel, "Horizontal", // the header
-            {padding: new go.Margin(0, 10)},
+            {padding: new go.Margin(0, 10), height: 50},
+            GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
+            GO(go.TextBlock, textStyleLeft120(), new go.Binding("text", "desc"),),
+        ),
+        { click: (e, obj) => showDetails(e, obj) }
+    );
+
+const simpleText150Template =
+    GO(go.Node, "Auto",{ selectionAdorned: false },{ fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides, isShadowed: false, shadowOffset: new go.Point(3, 3) },
+        GO(go.Shape, {height: 15}, new go.Binding("height", "height"), new go.Binding("width", "width"),
+            new go.Binding("figure", "shape"), { strokeWidth: 0, stroke: "#555", fill:"Transparent" }, new go.Binding("stroke", "color")),
+        GO(go.Panel, "Horizontal", // the header
+            {padding: new go.Margin(0, 10), height: 50},
             GO(go.Picture,{ maxSize: new go.Size(20, 20) }, new go.Binding("source", "img")),
             GO(go.TextBlock, textStyleLeft150(), new go.Binding("text", "desc"),),
         ),

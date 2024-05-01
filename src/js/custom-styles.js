@@ -6,13 +6,19 @@ function textStyle() {
 
 function textStyle150() {
     return [
-        { margin: 10, width: 100, textAlign: "center", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
+        { margin: 10, width: 150, textAlign: "center", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
+    ];
+}
+
+function textStyleLeft120() {
+    return [
+        { margin: 10, width: 120, textAlign: "left", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
     ];
 }
 
 function textStyleLeft150() {
     return [
-        { margin: 10, width: 120, textAlign: "left", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
+        { margin: 10, width: 160, textAlign: "left", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}
     ];
 }
 
