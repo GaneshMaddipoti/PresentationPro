@@ -673,6 +673,21 @@ Nested classes can also be static like properties and methods <br/>
     }
 }</div>
 <br/>
+<b>Sealed Class</b><br/>
+A sealed class restricts which other classes may extend it <br/>
+Interfaces are also can be sealed <br/>
+Interfaces are permitted to extend sealed interface <br/>
+Interfaces that extend sealed interfaces can not be final <br/>
+<div class="sourceCode">sealed class Order permits CashOrder, DebitOrder {
+}
+
+public final CashOrder extends Order {
+}
+
+public non-sealed class DebitOrder extends Order {
+}
+</div>
+<br/>
 <b>Static Members </b><br/>
 static members of class, are stored in shared class object <br/>
 they can be accessed using class name itself (Animal.count) <br/>
@@ -704,8 +719,29 @@ A class can extend only one class but implement many interfaces <br/>
 <li>All interface variables must be public static final</li>
 <li>All interface methods are implicitly public abstract</li>
 <li>An interface can extend one or more other interfaces</li>
-<li>Interface methods must not be static,final,native,strictfp.</li>
+<li>Interface methods must not be final,native,strictfp.</li>
+<li>Interface methods can be default, static, private</li>
+<li>private, private static mainly to reduce code duplication</li>
 </ol>
+<br/>
+<b>Default method</b><br/>
+<ul>
+<li>A default method maybe declared only within a interface</li>
+<li>It should marked with default keyword, and include a body</li>
+<li>It is implicitly public</li>
+<li>It can not be abstract, final, static</li>
+<li>It can be overridden by the implementing classes</li>
+<li>We can call SuperClass.super.defaultMethod() to call hidden default method </li>
+<li>If a class inherits 2 or more same default methods, it should override</li>
+</ul>
+<br/>
+<b>Static method</b><br/>
+<ul>
+<li>A static method marked with static and include a body</li>
+<li>Without access modifier, they are implicitly public</li>
+<li>It can not be abstract and final</li>
+<li>Its not inherited</li>
+</ul>
 <div class="sourceCode">public interface Printable {
     public void print();
 }</div>

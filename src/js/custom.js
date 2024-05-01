@@ -4,10 +4,12 @@ nodeTemplateMap.add("object", objectTemplate);
 nodeTemplateMap.add("simple", simpleTemplate);
 nodeTemplateMap.add("simpleText", simpleTextTemplate);
 nodeTemplateMap.add("token", tokenTemplate);
+nodeTemplateMap.add("menuItem", menuItemTemplate);
 diagram.nodeTemplateMap = nodeTemplateMap;
 
 const linkTemplateMap = new go.Map();
 linkTemplateMap.add("simple", simpleLinkTemplate);
+linkTemplateMap.add("menuLink", menuLinkTemplate);
 diagram.linkTemplateMap = linkTemplateMap;
 
 const groupTemplateMap = new go.Map();
@@ -16,6 +18,7 @@ groupTemplateMap.add("grid3", grid3Template);
 groupTemplateMap.add("tree", treeTemplate);
 groupTemplateMap.add("tree90", tree90Template);
 groupTemplateMap.add("tree250", tree250Template);
+groupTemplateMap.add("menu", menuTemplate);
 diagram.groupTemplateMap = groupTemplateMap;
 
 diagram.animationManager.initialAnimationStyle = go.AnimationStyle.AnimateLocations;

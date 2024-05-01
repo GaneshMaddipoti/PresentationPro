@@ -18,11 +18,16 @@ let javaNodeDataArray = [
     {key: "Processor", desc: "Processor", group: "CPU", category: "simple", img: "img/processor.svg", expand: false},
 
 
-    {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "tree", toolTipHTML: javaProgrammingHTML, expand: true, img: "img/application.svg",},
+    {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "menu", toolTipHTML: javaProgrammingHTML, expand: true, img: "img/application.svg",},
 
-    {key: "Sourcecode", desc: "source", group: "Application", isGroup: true, category: "tree", toolTipHTML: javaSourceCodeHTML, expand: true, img: "img/sourceFolder.svg",},
-    {key: "Package", desc: "Package", group: "Sourcecode", isGroup: true, category: "tree",expand: false, img: "img/package.svg", expand: true},
-    {key: "File", desc: "File", group: "Package", isGroup: true, category: "grid2",expand: false, img: "img/byteFile.svg", expand: true},
+    {key: "Sourcecode", desc: "source", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
+    {key: "Package", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
+    {key: "File", desc: "File(.java)", group: "Application", isGroup: true, category: "grid2",expand: false, img: "img/byteFile.svg", expand: true},
+
+    {key: "Bytecode", desc: "target", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
+    {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
+    {key: "File1", desc: "File(.class)", group: "Application", category: "simple", expand: false, img: "img/byteFile.svg", expand: true},
+
 
     {key: "Class", desc: "class", group: "File", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,},
     {key: "Property", desc: "properties", group: "Class", category: "simple", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
@@ -38,7 +43,6 @@ let javaNodeDataArray = [
     {key: "Enum", desc: "enum", group: "File", category: "simple", expand: false,},
     {key: "Record", desc: "record", group: "File", category: "simple", expand: false,},
 
-    {key: "Bytecode", desc: "Bytecode", group: "Application", category: "simple", toolTipHTML: javaProgrammingHTML, expand: false, img: "img/byteFile.svg",},
     {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: true},
 
     {key: "Java-String", desc: "String", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
@@ -148,6 +152,11 @@ let javaLinkDataArray = [
     {from:"About Me", to: "Features", category: "simple"},
     {from:"Title", to: "About Me", category: "simple"},
     {from:"Features", to: "eCommerce", category: "simple"},
+    {from:"Sourcecode", to:"Package", category: "menuLink"},
+    {from:"Package", to:"File", category: "menuLink"},
+
+    {from:"Bytecode", to:"Package1", category: "menuLink"},
+    {from:"Package1", to:"File1", category: "menuLink"},
 
 
     { from: "Add1", fromPort: "Out", to: "Subtract1", toPort: "A" },
