@@ -7,7 +7,10 @@ let javaNodeDataArray = [
 //    {key: "Features", desc: "Content", category: "simple", group: "Presentation", toolTipHTML: featuresHTML},
 //
 
-    {key: "System", desc: "System", group: "Presentation", isGroup: true, category: "tree", img: "img/system.svg", expand: true},
+    {key: "VoidGroup", category: "voidTree", isGroup: true,},
+    {key: "VoidNode", category: "voidNode", group: "VoidGroup"},
+
+    {key: "System", desc: "System", group: "VoidGroup", isGroup: true, category: "tree", img: "img/system.svg", expand: true},
 
     {key: "Storage", desc: "Storage", isGroup: true, group: "System", category: "tree", img: "img/drive.svg", expand: true},
 
@@ -22,28 +25,38 @@ let javaNodeDataArray = [
 
     {key: "Sourcecode", desc: "source", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
-    {key: "File", desc: "File(.java)", group: "Application", isGroup: true, category: "grid2",expand: false, img: "img/byteFile.svg", expand: true},
+    {key: "File", desc: "File(.java)", group: "Application", isGroup: true, category: "tree",expand: false, img: "img/byteFile.svg", expand: true},
 
     {key: "Bytecode", desc: "target", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
     {key: "File1", desc: "File(.class)", group: "Application", category: "simple", expand: false, img: "img/byteFile.svg", expand: true},
 
 
-    {key: "Class", desc: "class", group: "File", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,},
-    {key: "Property", desc: "properties", group: "Class", category: "simpleText100", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
+    {key: "Class", desc: "class", group: "File", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},
+    {key: "Property", desc: "properties", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
 //    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
-    {key: "Method", desc: "methods", group: "Class", category: "simpleText100", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
-//
+    {key: "Method", desc: "methods", group: "Class", expand: false, isGroup: true, category: "menu", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
+
+    {key: "Java-Literals", desc: "Literals", group:"Method", category: "simpleText100", toolTipHTML: javaLiteralHTML},
+    {key: "Java-Identifiers", desc: "Identifiers", group:"Method", category: "simpleText100", toolTipHTML: javaIdentifiersHTML},
+    {key: "Java-Datatypes", desc: "Datatypes", group:"Method", category: "simpleText100", toolTipHTML: javaDataTypeHTML},
+    {key: "Java-Statements", desc: "Statements", group:"Method", category: "menuItem1", toolTipHTML: javaStatementHTML},
+    {key: "Java-Conditions", desc: "Conditions", group:"Method", category: "simpleText100", toolTipHTML: javaFlowControlsHTML},
+    {key: "Java-Loops", desc: "Loops", group:"Method", category: "simpleText100", toolTipHTML: javaLoopsHTML},
+    {key: "Java-Exceptions", desc: "Exceptions", group:"Method", category: "simpleText100", toolTipHTML: javaExceptionsHTML},
+    {key: "Java-Generics", desc: "Generics", group:"Method", category: "simpleText100", toolTipHTML: javaGenericsHTML},
+
+
 //    {key: "Statement1", desc: "Integer amount = 195;", group: "Method", category: "simpleText", toolTipHTML: javaStatementHTML, img: "img/null.svg"},
 //    {key: "Statement2", desc: "if(rate !=0) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaFlowControlsHTML, img: "img/null.svg"},
 //    {key: "Statement3", desc: "for(int i=0; i<10; i++) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaLoopsHTML, img: "img/null.svg"},
 //    {key: "Statement4", desc: "try{ //stmts; } catch(Exceptin e) {}", group: "Method", category: "simpleText", toolTipHTML: javaExceptionsHTML, img: "img/null.svg"},
 
-    {key: "Interface", desc: "interface", group: "File", category: "simple", toolTipHTML: javaInterfaceHTML, expand: false, img: "img/interface.svg",},
-    {key: "Enum", desc: "enum", group: "File", category: "simple", expand: false,},
-    {key: "Record", desc: "record", group: "File", category: "simple", expand: false,},
+    {key: "Interface", desc: "interface", group: "File", category: "simpleText100", toolTipHTML: javaInterfaceHTML, expand: false, img: "img/interface.svg",},
+    {key: "Enum", desc: "enum", group: "File", category: "simpleText100", expand: false,},
+    {key: "Record", desc: "record", group: "File", category: "simpleText100", expand: false,},
 
-    {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: true},
+    {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: false},
 
     {key: "Java-String", desc: "String", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
     {key: "Java-System", desc: "System", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
@@ -56,51 +69,41 @@ let javaNodeDataArray = [
     {key: "Java-Spliterators", desc: "Spliterators", group:"Java API", category: "simple", toolTipHTML: javaSpliteratorsHTML},
     {key: "Java-Streams", desc: "Streams", group:"Java API", category: "simple", toolTipHTML: javaStreamsHTML},
 
-    {key: "Java-Syntax", desc: "Syntax", isGroup: true, group: "Java", expand: true, category: "grid2", toolTipHTML: javaSyntaxHTML},
-    {key: "Java-Literals", desc: "Literals", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLiteralHTML},
-    {key: "Java-Identifiers", desc: "Identifiers", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaIdentifiersHTML},
-    {key: "Java-Datatypes", desc: "Datatypes", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaDataTypeHTML},
-    {key: "Java-Statements", desc: "Statements", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaStatementHTML},
-    {key: "Java-Conditions", desc: "Conditions", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaFlowControlsHTML},
-    {key: "Java-Loops", desc: "Loops", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLoopsHTML},
-    {key: "Java-Exceptions", desc: "Exceptions", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaExceptionsHTML},
-    {key: "Java-Generics", desc: "Generics", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaGenericsHTML},
-
-    {key: "Java-Semantics", desc: "Semantics", isGroup: true, group: "Java", expand: true, category: "grid3"},
+    {key: "Java-Semantics", desc: "Semantics", isGroup: true, group: "Java", expand: false, category: "grid3"},
 
     {key: "Java-OOPS", desc: "OOPS", isGroup: true, group: "Java-Semantics", category: "tree", expand: true},
-    {key: "Java-OOPS-Encapsulation", desc: "Encapsulation", group:"Java-OOPS", category: "simpleText", toolTipHTML: javaEncapsulationHTML},
-    {key: "Java-OOPS-Abstraction", desc: "Abstraction", group:"Java-OOPS", category: "simpleText", toolTipHTML: javaAbstractionHTML},
-    {key: "Java-OOPS-Inheritance", desc: "Inheritance", group:"Java-OOPS", category: "simpleText", toolTipHTML: javaInheritanceHTML},
-    {key: "Java-OOPS-Polymorphism", desc: "Polymorphism", group:"Java-OOPS", category: "simpleText", toolTipHTML: javaPolymorphismHTML},
+    {key: "Java-OOPS-Encapsulation", desc: "Encapsulation", group:"Java-OOPS", category: "simpleTextLeft150", toolTipHTML: javaEncapsulationHTML},
+    {key: "Java-OOPS-Abstraction", desc: "Abstraction", group:"Java-OOPS", category: "simpleTextLeft150", toolTipHTML: javaAbstractionHTML},
+    {key: "Java-OOPS-Inheritance", desc: "Inheritance", group:"Java-OOPS", category: "simpleTextLeft150", toolTipHTML: javaInheritanceHTML},
+    {key: "Java-OOPS-Polymorphism", desc: "Polymorphism", group:"Java-OOPS", category: "simpleTextLeft150", toolTipHTML: javaPolymorphismHTML},
 
 
     {key: "Java-Design-Patterns", desc: "Design Patterns", isGroup: true, group: "Java-Semantics", category: "tree", expand: false},
 
-    {key: "Java-DP-Creational", desc: "Creational", isGroup: true, group: "Java-Design-Patterns", category: "grid3", expand: false},
-    {key: "Java-DP-Singleton", desc: "Singleton", group:"Java-DP-Creational", category: "simple", toolTipHTML: javaDPSingletonHTML},
-    {key: "Java-DP-Factory", desc: "Factory", group:"Java-DP-Creational", category: "simple", toolTipHTML: javaDPFactoryHTML},
-    {key: "Java-DP-AbstractFactory", desc: "Abstract Factory", group:"Java-DP-Creational", category: "simple", toolTipHTML: javaDPAbstractFactoryHTML},
-    {key: "Java-DP-Builder", desc: "Builder", group:"Java-DP-Creational", category: "simple", toolTipHTML: javaDPBuilderHTML},
-    {key: "Java-DP-Prototype", desc: "Prototype", group:"Java-DP-Creational", category: "simple", toolTipHTML: javaDPPrototypeHTML},
+    {key: "Java-DP-Creational", desc: "Creational", isGroup: true, group: "Java-Design-Patterns", category: "tree", expand: false},
+    {key: "Java-DP-Singleton", desc: "Singleton", group:"Java-DP-Creational", category: "simpleTextLeft150", toolTipHTML: javaDPSingletonHTML},
+    {key: "Java-DP-Factory", desc: "Factory", group:"Java-DP-Creational", category: "simpleTextLeft150", toolTipHTML: javaDPFactoryHTML},
+    {key: "Java-DP-AbstractFactory", desc: "Abstract Factory", group:"Java-DP-Creational", category: "simpleTextLeft150", toolTipHTML: javaDPAbstractFactoryHTML},
+    {key: "Java-DP-Builder", desc: "Builder", group:"Java-DP-Creational", category: "simpleTextLeft150", toolTipHTML: javaDPBuilderHTML},
+    {key: "Java-DP-Prototype", desc: "Prototype", group:"Java-DP-Creational", category: "simpleTextLeft150", toolTipHTML: javaDPPrototypeHTML},
 
-    {key: "Java-DP-Structural", desc: "Structural", isGroup: true, group: "Java-Design-Patterns", category: "grid3", expand: false},
-    {key: "Java-DP-Adapter", desc: "Adapter", group:"Java-DP-Structural", category: "simple", toolTipHTML: javaDPAdapterHTML},
-    {key: "Java-DP-Composite", desc: "Composite", group:"Java-DP-Structural", category: "simple", toolTipHTML: javaDPCompositeHTML},
-    {key: "Java-DP-Proxy", desc: "Proxy", group:"Java-DP-Structural", category: "simple", toolTipHTML: javaDPProxyHTML},
-    {key: "Java-DP-FlyWeight", desc: "FlyWeight", group:"Java-DP-Structural", category: "simple", toolTipHTML: javaDPFlyWeightHTML},
-    {key: "Java-DP-Facade", desc: "Facade", group:"Java-DP-Structural", category: "simple", toolTipHTML: javaDPFacadeHTML},
-    {key: "Java-DP-Decorator", desc: "Decorator", group:"Java-DP-Structural", category: "simple", toolTipHTML: javaDPDecoratorHTML},
+    {key: "Java-DP-Structural", desc: "Structural", isGroup: true, group: "Java-Design-Patterns", category: "tree", expand: false},
+    {key: "Java-DP-Adapter", desc: "Adapter", group:"Java-DP-Structural", category: "simpleTextLeft150", toolTipHTML: javaDPAdapterHTML},
+    {key: "Java-DP-Composite", desc: "Composite", group:"Java-DP-Structural", category: "simpleTextLeft150", toolTipHTML: javaDPCompositeHTML},
+    {key: "Java-DP-Proxy", desc: "Proxy", group:"Java-DP-Structural", category: "simpleTextLeft150", toolTipHTML: javaDPProxyHTML},
+    {key: "Java-DP-FlyWeight", desc: "FlyWeight", group:"Java-DP-Structural", category: "simpleTextLeft150", toolTipHTML: javaDPFlyWeightHTML},
+    {key: "Java-DP-Facade", desc: "Facade", group:"Java-DP-Structural", category: "simpleTextLeft150", toolTipHTML: javaDPFacadeHTML},
+    {key: "Java-DP-Decorator", desc: "Decorator", group:"Java-DP-Structural", category: "simpleTextLeft150", toolTipHTML: javaDPDecoratorHTML},
 
-    {key: "Java-DP-Behavioral", desc: "Behavioral", isGroup: true, group: "Java-Design-Patterns", category: "grid3", expand: false},
-    {key: "Java-DP-Strategy", desc: "Strategy", group:"Java-DP-Behavioral", category: "simple", toolTipHTML: javaDPStrategyHTML},
+    {key: "Java-DP-Behavioral", desc: "Behavioral", isGroup: true, group: "Java-Design-Patterns", category: "tree", expand: false},
+    {key: "Java-DP-Strategy", desc: "Strategy", group:"Java-DP-Behavioral", category: "simpleTextLeft150", toolTipHTML: javaDPStrategyHTML},
 
     {key: "Java-Solid", desc: "Solid Principles", isGroup: true, group: "Java-Semantics", category: "tree", expand: false},
-    {key: "Java-SP-singleResp", desc: "Single Responsibility", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPSingleRespHTML},
-    {key: "Java-SP-OpenClose", desc: "Open Close", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPOpenCloseHTML},
-    {key: "Java-SP-LiskovSubs", desc: "Liskov Substitution", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPLiskovSubHTML},
-    {key: "Java-SP-Interface-Segregation", desc: "Interface Segregation", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPInterfaceSegregationHTML},
-    {key: "Java-SP-DI", desc: "Dependency Inversion", group:"Java-Solid", category: "simpleText150", toolTipHTML: javaSPDIHTML},
+    {key: "Java-SP-singleResp", desc: "Single Responsibility", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPSingleRespHTML},
+    {key: "Java-SP-OpenClose", desc: "Open Close", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPOpenCloseHTML},
+    {key: "Java-SP-LiskovSubs", desc: "Liskov Substitution", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPLiskovSubHTML},
+    {key: "Java-SP-Interface-Segregation", desc: "Interface Segregation", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPInterfaceSegregationHTML},
+    {key: "Java-SP-DI", desc: "Dependency Inversion", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPDIHTML},
 
 //    {key: "Execution", desc: "Execution", category: "simple", group: "System", img: "img/tools.svg", toolTipHTML: executionHTML},
     {key: "JDK", desc: "JDK", isGroup: true, group: "Java", category: "tree", toolTipHTML: jdkHTML, expand: false},
@@ -123,15 +126,15 @@ let javaNodeDataArray = [
     {key: "Java VM", desc: "Java VM", isGroup: true, expand: false, category: "tree", group: "JDK"},
 
     {key: "Java Class Loader", desc: "Class Loader", isGroup: true, expand: true, category: "tree", group: "Java VM"},
-    {key: "Java Loading", desc: "Loading", isGroup: true, expand: false, category: "tree", group: "Java Class Loader"},
-    {key: "Java Bootstrap Loader", desc: "Bootstrap Loader", category: "simple", group: "Java Loading"},
-    {key: "Java Extension Loader", desc: "Extension Loader", category: "simple", group: "Java Loading"},
-    {key: "Java Application Loader", desc: "Application Loader", category: "simple", group: "Java Loading"},
+    {key: "Java Loading", desc: "Loading", isGroup: true, expand: false, category: "tree90", group: "Java Class Loader"},
+    {key: "Java Bootstrap Loader", desc: "Bootstrap Loader", category: "simpleText150", group: "Java Loading", width: 120},
+    {key: "Java Extension Loader", desc: "Extension Loader", category: "simpleText150", group: "Java Loading", width: 120},
+    {key: "Java Application Loader", desc: "Application Loader", category: "simpleText150", group: "Java Loading", width: 120},
 
-    {key: "Java Linking", desc: "Linking", isGroup: true, expand: false, category: "tree", group: "Java Class Loader"},
-    {key: "Java Verify", desc: "Verify", category: "simple",  group: "Java Linking"},
-    {key: "Java Prepare", desc: "Prepare", category: "simple",  group: "Java Linking"},
-    {key: "Java Resolve", desc: "Resolve", category: "simple",  group: "Java Linking"},
+    {key: "Java Linking", desc: "Linking", isGroup: true, expand: false, category: "tree90", group: "Java Class Loader"},
+    {key: "Java Verify", desc: "Verify", category: "simpleText",  group: "Java Linking"},
+    {key: "Java Prepare", desc: "Prepare", category: "simpleText",  group: "Java Linking"},
+    {key: "Java Resolve", desc: "Resolve", category: "simpleText",  group: "Java Linking"},
 
     {key: "Java Initialization", desc: "Initialization", category: "simple", group: "Java Class Loader"},
 
@@ -157,6 +160,10 @@ let javaLinkDataArray = [
 
     {from:"Bytecode", to:"Package1", category: "menuLink"},
     {from:"Package1", to:"File1", category: "menuLink"},
+
+    {from:"Java-Statements", to:"Java-Literals", category: "menuLink"},
+    {from:"Java-Statements", to:"Java-Identifiers", category: "menuLink"},
+    {from:"Java-Statements", to:"Java-Datatypes", category: "menuLink"},
 
 
     { from: "Add1", fromPort: "Out", to: "Subtract1", toPort: "A" },
