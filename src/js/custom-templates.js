@@ -24,6 +24,18 @@ const objectTemplate =
       new go.Binding("text", "desc"))
   );
 
+const simplePicTemplate =
+    GO(go.Node, "Vertical", { selectionAdorned: false },{padding: 0, margin: new go.Margin(0, 0, 0, 0),},
+        GO(go.Picture,
+            { maxSize: new go.Size(30, 30), },
+            new go.Binding("source", "img")),
+        GO(go.TextBlock, textStyle(),
+            { margin: new go.Margin(0, 0, 0, 0),
+                maxSize: new go.Size(50, 50),
+                isMultiline: false },
+            new go.Binding("text", "desc")),
+        { click: (e, obj) => showDetails(e, obj) }
+    );
 
 const simpleTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
     {isShadowed: true, shadowBlur: 1, shadowColor: colors.blackShadow,

@@ -56,6 +56,69 @@ Content
 <ul><li>Anyone who wants to learn Java language from zero to advanced</li></ul>
 `;
 
+let hadoopHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+What is Hadoop ?
+</div>
+<b>Hadoop</b><br/>
+An open source software platform for <br/>
+1) Distributed storage (HDFS) <br/>
+2) Cluster manager <br/>
+3) Distributed processing <br/>
+of very large datasets on computer clusters build with commodity hardware<br/>
+<br/>
+<b>Why Hadoop</b><br/>
+1) Horizontal scaling as vertical scaling has limits <br/>
+2) Data duplication for resilient against h/w,n/w failures <br/>
+<br/>
+`;
+
+let mapReduceHTML = `
+MapReduce distributes the processing on cluster <br/>
+Map - transformation - transforming the each input line to output format <br/>
+&emsp; - it converts into key, value <K,V> pairs <br/>
+Reduce - aggregator - aggregates the data together from mappers <br/>
+After Map, shuffle and sort happens automatically <br/>
+
+`;
+
+let hdfsHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+What is HDFS ?
+</div>
+<b>Hadoop distributed file system</b><br/>
+A distributed file system that works with cluster of drives <br/>
+Its mainly optimized to handle large files, by breaking into blocks <br/>
+<br/>
+We can access HDFS by <br/>
+1) UI - Ambari <br/>
+2) Command line interface <br/>
+3) HTTP/HDFS proxies <br/>
+4) Java Interface <br/>
+5) NFS Gateway <br/>
+
+`;
+
+let nameNodeHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+Name Node
+</div>
+<b>Name Node</b><br/>
+Name Node is used to keep track of data blocks present in cluster for a file <br/>
+Name Node writes edit log to local disk or NFS mount <br/>
+Also, can maintain backup of edit log in secondary name node <br/>
+Zookeeper, keeps track of active name node <br/>
+
+`;
+
+let dataNodeHTML = `
+<div class="reqBanner"><img class="reqBannerImg"/>
+Data Node
+</div>
+<b>Data Node</b><br/>
+Data Node is used to stored the data blocks of a file <br/>
+`;
+
 let javaHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 Why to learn java ?
