@@ -270,6 +270,7 @@ let javaSyntaxHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
 Syntax
 </div>
+; - each line is delimited by ; <br/><br/>
 // used for comments <br/>
 /* <br/>
  *<br/>

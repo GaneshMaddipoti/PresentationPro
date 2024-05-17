@@ -57,6 +57,7 @@ let javaNodeDataArray = [
     {key: "Record", desc: "record", group: "File", category: "simpleText100", expand: false,},
 
     {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: false},
+    {key: "Java-Syntax", desc: "Syntax", group: "Java", category: "simple", toolTipHTML: javaSyntaxHTML},
 
     {key: "Java-String", desc: "String", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
     {key: "Java-System", desc: "System", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
