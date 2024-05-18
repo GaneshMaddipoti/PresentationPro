@@ -9,6 +9,12 @@ function textStyleLeft() {
     ];
 }
 
+function textStyleLeft350() {
+    return [
+        { margin: 10, width: 350, textAlign: "left", font: '500 16px Roboto, sans-serif', stroke: "#000"}
+    ];
+}
+
 function textStyle150() {
     return [
         { margin: 10, width: 150, textAlign: "center", font: '500 16px Roboto, sans-serif', stroke: "#cccccc"}

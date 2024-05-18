@@ -2,6 +2,7 @@ const nodeTemplateMap = new go.Map();
 nodeTemplateMap.add("stack", stackTemplate);
 nodeTemplateMap.add("object", objectTemplate);
 nodeTemplateMap.add("simple", simpleTemplate);
+nodeTemplateMap.add("simpleEdit", simpleEditTemplate);
 nodeTemplateMap.add("simplePic", simplePicTemplate);
 nodeTemplateMap.add("voidNode", voidNodeTemplate);
 nodeTemplateMap.add("simple150", simple150Template);
@@ -48,6 +49,7 @@ let aToken;
 let aFrac;
 let aFrom;
 let aTo;
+let direction;
 
 function addToken() {
     diagram.model.commit(m => {
@@ -69,9 +71,20 @@ function animateToken(token, from, to) {
     aToken = token;
     aFrom = from;
     aTo = to;
-    aFrac = 0.0;
+    aFrac = 0.1;
+    direction = 0;
     addToken();
     updateToken();
+}
+
+function animateToken1(token, from, to) {
+    aToken = token;
+    aFrom = from;
+    aTo = to;
+    aFrac = 0.1;
+    direction = 0;
+    addToken();
+    fwdBckToken();
 }
 
 async function focusNode(){
@@ -128,6 +141,25 @@ function updateToken() {
         part1.data.frac = aFrac = aFrac + 0.01;
         window.requestAnimationFrame(updateToken);
     } else {
+        part1.visible = false;
+        window.requestAnimationFrame(removeToken);
+    }
+}
+
+function fwdBckToken() {
+    let part1 = diagram.findPartForKey(aToken);
+    var link = diagram.findNodeForKey(aFrom).findLinksTo(diagram.findNodeForKey(aTo)).first();
+    if (link !== null) {
+        part1.location = link.path.getDocumentPoint(link.path.geometry.getPointAlongPath(aFrac, new go.Point()));
+    }
+    if (aFrac < 1.0 && direction == 0) {
+        part1.data.frac = aFrac = aFrac + 0.01;
+        window.requestAnimationFrame(fwdBckToken);
+    } else if(aFrac > 0.0){
+        direction = 1;
+        part1.data.frac = aFrac = aFrac - 0.01;
+        window.requestAnimationFrame(fwdBckToken);
+    } else if(aFrac <= 0.0) {
         part1.visible = false;
         window.requestAnimationFrame(removeToken);
     }

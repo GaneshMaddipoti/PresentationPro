@@ -48,6 +48,18 @@ const simpleTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
         { click: (e, obj) => showDetails(e, obj) }
 );
 
+const simpleEditTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
+    {isShadowed: true, shadowBlur: 1, shadowColor: colors.blackShadow,
+           shadowOffset: new go.Point(5, 5), fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides},
+    GO(go.Shape, "RoundedRectangle",
+                {fill: "#C0C0C0", stroke: "WhiteSmoke"}),
+    GO(go.Panel, "Horizontal", // the header
+                {height: 350}, new go.Binding("height", "height"),
+                {width: 450}, new go.Binding("width", "width"),
+    GO(go.TextBlock, {editable: true}, textStyleLeft350(), new go.Binding("text", "desc"))),
+        { click: (e, obj) => showDetails(e, obj) }
+);
+
 const voidNodeTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
     {isShadowed: true, shadowBlur: 1, shadowColor: colors.blackShadow,
            shadowOffset: new go.Point(5, 5), fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides},

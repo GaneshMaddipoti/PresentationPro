@@ -25,14 +25,15 @@ let javaNodeDataArray = [
 
     {key: "Sourcecode", desc: "source", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
-    {key: "File", desc: "File(.java)", group: "Application", isGroup: true, category: "tree",expand: false, img: "img/byteFile.svg", expand: true},
+    {key: "File", desc: "File(.java)", group: "Application", isGroup: true, category: "tree",expand: false},
+    {key: "Code", desc: "Code", group: "File", category: "simpleEdit"},
 
     {key: "Bytecode", desc: "target", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
     {key: "File1", desc: "File(.class)", group: "Application", category: "simple", expand: false, img: "img/byteFile.svg", expand: true},
 
 
-    {key: "Class", desc: "class", group: "File", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},
+    {key: "Class", desc: "class", group: "Java-Syntax", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},
     {key: "Property", desc: "properties", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
 //    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
     {key: "Method", desc: "methods", group: "Class", expand: false, isGroup: true, category: "menu", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
@@ -52,23 +53,23 @@ let javaNodeDataArray = [
 //    {key: "Statement3", desc: "for(int i=0; i<10; i++) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaLoopsHTML, img: "img/null.svg"},
 //    {key: "Statement4", desc: "try{ //stmts; } catch(Exceptin e) {}", group: "Method", category: "simpleText", toolTipHTML: javaExceptionsHTML, img: "img/null.svg"},
 
-    {key: "Interface", desc: "interface", group: "File", category: "simpleText100", toolTipHTML: javaInterfaceHTML, expand: false, img: "img/interface.svg",},
-    {key: "Enum", desc: "enum", group: "File", category: "simpleText100", expand: false,},
-    {key: "Record", desc: "record", group: "File", category: "simpleText100", expand: false,},
+    {key: "Interface", desc: "interface", group: "Java-Syntax", category: "simpleText100", toolTipHTML: javaInterfaceHTML, expand: false, img: "img/interface.svg",},
+    {key: "Enum", desc: "enum", group: "Java-Syntax", category: "simpleText100", expand: false,},
+    {key: "Record", desc: "record", group: "Java-Syntax", category: "simpleText100", expand: false,},
 
     {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: false},
-    {key: "Java-Syntax", desc: "Syntax", group: "Java", category: "simple", toolTipHTML: javaSyntaxHTML},
+    {key: "Java-Syntax", desc: "Syntax", group: "Java", isGroup:true, category: "tree", toolTipHTML: javaSyntaxHTML},
 
-    {key: "Java-String", desc: "String", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
-    {key: "Java-System", desc: "System", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
-    {key: "Java-Math", desc: "Math", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
-    {key: "Java-DateTime", desc: "DateTime", group:"Java API", category: "simple", toolTipHTML: javaStringHTML},
+    {key: "Java-String", desc: "String", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+    {key: "Java-System", desc: "System", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+    {key: "Java-Math", desc: "Math", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+    {key: "Java-DateTime", desc: "DateTime", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
 
-    {key: "Java-WrapperClass", desc: "Wrapper Classes", group:"Java API", category: "simple", toolTipHTML: javaWrapperClassHTML},
-    {key: "Java-Collections", desc: "Collections", group:"Java API", category: "simple", toolTipHTML: javaCollectionsHTML},
-    {key: "Java-Iterators", desc: "Iterators", group:"Java API", category: "simple", toolTipHTML: javaIteratorsHTML},
-    {key: "Java-Spliterators", desc: "Spliterators", group:"Java API", category: "simple", toolTipHTML: javaSpliteratorsHTML},
-    {key: "Java-Streams", desc: "Streams", group:"Java API", category: "simple", toolTipHTML: javaStreamsHTML},
+    {key: "Java-WrapperClass", desc: "Wrapper Classes", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaWrapperClassHTML},
+    {key: "Java-Collections", desc: "Collections", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaCollectionsHTML},
+    {key: "Java-Iterators", desc: "Iterators", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaIteratorsHTML},
+    {key: "Java-Spliterators", desc: "Spliterators", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaSpliteratorsHTML},
+    {key: "Java-Streams", desc: "Streams", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStreamsHTML},
 
     {key: "Java-Semantics", desc: "Semantics", isGroup: true, group: "Java", expand: false, category: "grid3"},
 
@@ -111,7 +112,7 @@ let javaNodeDataArray = [
 
 
     {key: "Java Compiler", desc: "Compiler", category: "simple", group: "JDK", img: "img/tools.svg"},
-    {key: "Java API", desc: "API", category: "grid3", isGroup: true, group: "JDK",expand: false},
+    {key: "Java API", desc: "API", category: "tree", isGroup: true, group: "JDK",expand: false},
 
     {key: "Meta", desc: "Meta", category: "grid3", group: "Memory", isGroup: true,},
     {key: "class1", desc: "cls1", category: "object", group: "Meta", fill: "#3A5262"},
