@@ -294,6 +294,7 @@ const menuItemTemplate = GO(go.Node,
         selectionAdorned: false,
         // a custom function to allow expanding/collapsing on double-click
         // this uses similar logic to a TreeExpanderButton
+        click: (e, obj) => showDetails(e, obj),
         doubleClick: (e, node) => {
           var cmd = diagram.commandHandler;
           if (node.isTreeExpanded) {

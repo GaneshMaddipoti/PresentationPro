@@ -21,7 +21,7 @@ let javaNodeDataArray = [
     {key: "Processor", desc: "Processor", group: "CPU", category: "simple", img: "img/processor.svg", expand: false},
 
 
-    {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "menu", toolTipHTML: javaProgrammingHTML, expand: true, img: "img/application.svg",},
+    {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "menu", expand: true, img: "img/application.svg",},
 
     {key: "Sourcecode", desc: "source", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
