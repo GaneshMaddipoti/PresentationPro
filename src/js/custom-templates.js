@@ -354,7 +354,7 @@ const menuItemTemplate = GO(go.Node,
 function imageConverter(prop, picture) {
     var node = picture.part;
     if (node.isTreeLeaf) {
-      return 'img/byteFile.svg';
+      return 'img/folder.svg';
     } else {
       if (node.isTreeExpanded) {
         return 'img/sourceFolder.svg';

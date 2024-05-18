@@ -30,7 +30,6 @@ let javaNodeDataArray = [
 
     {key: "Bytecode", desc: "target", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
-    {key: "File1", desc: "File(.class)", group: "Application", category: "simple", expand: false, img: "img/byteFile.svg", expand: true},
 
 
     {key: "Class", desc: "class", group: "Java-Syntax", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},

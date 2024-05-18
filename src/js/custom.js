@@ -37,10 +37,10 @@ diagram.commandHandler.zoomToFit();
 
 function addNode() {
     diagram.model.commit(m => {
-        const newNodeData = { key: "NewNode", category: "simple", group: "Beta" };
+        const newNodeData = {key: "File1", desc: "File(.class)", group: "Application", category: "simple", expand: false, expand: true};
         m.addNodeData(newNodeData);
         let newNode = diagram.findNodeForData(newNodeData);
-        let betaNode = diagram.findNodeForKey("Beta");
+        let betaNode = diagram.findNodeForKey("Package1");
         if (newNode) newNode.location = betaNode.location;
     }, 'add node');
 }
