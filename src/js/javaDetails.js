@@ -58,7 +58,7 @@ Content
 
 let javaHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-Why to learn java ?
+About Java
 </div>
 <b>Programming Language</b><br/>
 A programming language is a set of instructions written by a programmer to deliver instructions <br/>
@@ -75,13 +75,8 @@ Created by James Gosling and team at Sun micro systems in 1991 <br/>
 3) Object Oriented <br/>
 4) Statically typed <br/>
 5) Multi threaded <br/>
+6) Robust (exception handling and garbage collection) <br/>
 <br/>
-<b>Answer is</b><br/>
-Java is able to manage large applications with more code and data through OOP concepts, <br/>
-1) Encapsulation <br/>
-2) Abstraction <br/>
-3) Inheritance <br/>
-4) Polymorphism <br/>
 `;
 
 let javaEncapsulationHTML = `

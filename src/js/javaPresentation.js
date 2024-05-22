@@ -32,6 +32,10 @@ let javaNodeDataArray = [
     {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
 
 
+    {key: "JDK", desc: "JDK", isGroup: true, group: "Java", category: "tree", toolTipHTML: jdkHTML, expand: false},
+    {key: "Java Compiler", desc: "Compiler", category: "simple", group: "JDK", img: "img/tools.svg"},
+    {key: "Java API", desc: "API", category: "tree", isGroup: true, group: "JDK",expand: false},
+
     {key: "Class", desc: "class", group: "Java-Syntax", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},
     {key: "Property", desc: "properties", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
 //    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
@@ -107,11 +111,7 @@ let javaNodeDataArray = [
     {key: "Java-SP-DI", desc: "Dependency Inversion", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPDIHTML},
 
 //    {key: "Execution", desc: "Execution", category: "simple", group: "System", img: "img/tools.svg", toolTipHTML: executionHTML},
-    {key: "JDK", desc: "JDK", isGroup: true, group: "Java", category: "tree", toolTipHTML: jdkHTML, expand: false},
 
-
-    {key: "Java Compiler", desc: "Compiler", category: "simple", group: "JDK", img: "img/tools.svg"},
-    {key: "Java API", desc: "API", category: "tree", isGroup: true, group: "JDK",expand: false},
 
     {key: "Meta", desc: "Meta", category: "grid3", group: "Memory", isGroup: true,},
     {key: "class1", desc: "cls1", category: "object", group: "Meta", fill: "#3A5262"},

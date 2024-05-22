@@ -19,25 +19,12 @@ let pythonNodeDataArray = [
     {key: "Sourcecode", desc: "source", group: "Application", category: "menuItem", expand: true,},
     {key: "Package", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
     {key: "File", desc: "File(.py)", group: "Application", isGroup: true, category: "grid2",expand: false, img: "img/byteFile.svg", expand: true},
+    {key: "Code", desc: "Code", group: "File", category: "simpleEdit"},
+
 
     {key: "Bytecode", desc: "target", group: "Application", category: "menuItem", expand: true,},
     {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
     {key: "File1", desc: "File(.pyc)", group: "Application", category: "simple", expand: false, img: "img/byteFile.svg", expand: true},
-
-
-    {key: "Class", desc: "class", group: "File", isGroup: true, category: "tree", },
-    {key: "Property", desc: "properties", group: "Class", category: "simpleText100",  img: "img/private.svg"},
-//    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
-    {key: "Method", desc: "methods", group: "Class", category: "simpleText100",  img: "img/public.svg"},
-//
-//    {key: "Statement1", desc: "Integer amount = 195;", group: "Method", category: "simpleText", toolTipHTML: javaStatementHTML, img: "img/null.svg"},
-//    {key: "Statement2", desc: "if(rate !=0) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaFlowControlsHTML, img: "img/null.svg"},
-//    {key: "Statement3", desc: "for(int i=0; i<10; i++) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaLoopsHTML, img: "img/null.svg"},
-//    {key: "Statement4", desc: "try{ //stmts; } catch(Exceptin e) {}", group: "Method", category: "simpleText", toolTipHTML: javaExceptionsHTML, img: "img/null.svg"},
-
-    {key: "Interface", desc: "interface", group: "File", category: "simple", expand: false, img: "img/interface.svg",},
-    {key: "Enum", desc: "enum", group: "File", category: "simple", expand: false,},
-    {key: "Record", desc: "record", group: "File", category: "simple", expand: false,},
 
     {key: "Python", desc: "Python", group: "Storage", color: "WhiteSmoke", isGroup: true, category: "tree", img: "assets/img/python.png", toolTipHTML: pythonHTML},
     {key: "Python-Install", desc: "Install", color: "WhiteSmoke", isGroup: true, group: "Python", category: "grid2", expand: false},
