@@ -41,7 +41,6 @@ let javaNodeDataArray = [
 //    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
     {key: "Method", desc: "methods", group: "Class", expand: false, isGroup: true, category: "menu", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
 
-    {key: "Java-Literals", desc: "Literals", group:"Method", category: "simpleText100", toolTipHTML: javaLiteralHTML},
     {key: "Java-Identifiers", desc: "Identifiers", group:"Method", category: "simpleText100", toolTipHTML: javaIdentifiersHTML},
     {key: "Java-Datatypes", desc: "Datatypes", group:"Method", category: "simpleText100", toolTipHTML: javaDataTypeHTML},
     {key: "Java-Statements", desc: "Statements", group:"Method", category: "menuItem1", toolTipHTML: javaStatementHTML},
@@ -62,6 +61,8 @@ let javaNodeDataArray = [
 
     {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: false},
     {key: "Java-Syntax", desc: "Syntax", group: "Java", isGroup:true, category: "tree", toolTipHTML: javaSyntaxHTML},
+    {key: "Java-Literals", desc: "Literals", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLiteralHTML},
+
 
     {key: "Java-String", desc: "String", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
     {key: "Java-System", desc: "System", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
@@ -114,15 +115,19 @@ let javaNodeDataArray = [
 
 
     {key: "Meta", desc: "Meta", category: "grid3", group: "Memory", isGroup: true,},
-    {key: "class1", desc: "cls1", category: "object", group: "Meta", fill: "#3A5262"},
-    {key: "class2", desc: "cls2", category: "object", group: "Meta", fill: "#3A5262"},
+    {key: "class1", desc: "cls1", category: "box", group: "Meta", fill: "#3A5262"},
+    {key: "class2", desc: "cls2", category: "box", group: "Meta", fill: "#3A5262"},
 
     {key: "Heap", desc: "Heap", category: "grid3", group: "Memory", isGroup: true,},
+    {key: "class1", desc: "cls1", category: "object", group: "Heap", fill: "#3A5262"},
+    {key: "class2", desc: "cls2", category: "object", group: "Heap", fill: "#3A5262"},
     {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
+    {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
+    {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
     {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
 
     {key: "Stack", desc: "Stack", category: "grid3", group: "Memory", isGroup: true,},
-    {key: "thread1", desc: "thread1", category: "stack", group: "Stack", items: ["", "ref1", "var1", "method1"]},
+    {key: "thread1", desc: "thread1", category: "stack", group: "Stack", items: ["thread1" ,"", "ref1", "var1", "method1"]},
 
     {key: "Java VM", desc: "Java VM", isGroup: true, expand: false, category: "tree", group: "JDK"},
 
@@ -162,7 +167,7 @@ let javaLinkDataArray = [
     {from:"Bytecode", to:"Package1", category: "menuLink"},
     {from:"Package1", to:"File1", category: "menuLink"},
 
-    {from:"Java-Statements", to:"Java-Literals", category: "menuLink"},
+    // {from:"Java-Statements", to:"Java-Literals", category: "menuLink"},
     {from:"Java-Statements", to:"Java-Identifiers", category: "menuLink"},
     {from:"Java-Statements", to:"Java-Datatypes", category: "menuLink"},
 

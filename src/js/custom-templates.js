@@ -24,6 +24,14 @@ const objectTemplate =
       new go.Binding("text", "desc"))
   );
 
+const boxTemplate =
+    GO(go.Node, "Auto",
+        GO(go.Shape, "RoundedRectangle", {stroke: "WhiteSmoke"}, new go.Binding("fill", "fill")),
+        GO(go.TextBlock,
+            { margin: 5,  stroke: "#cccccc" },
+            new go.Binding("text", "desc"))
+    );
+
 const simplePicTemplate =
     GO(go.Node, "Vertical", { selectionAdorned: false },{padding: 0, margin: new go.Margin(0, 0, 0, 0),},
         GO(go.Picture,

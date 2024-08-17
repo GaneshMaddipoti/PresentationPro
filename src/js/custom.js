@@ -1,6 +1,7 @@
 const nodeTemplateMap = new go.Map();
 nodeTemplateMap.add("stack", stackTemplate);
 nodeTemplateMap.add("object", objectTemplate);
+nodeTemplateMap.add("box", boxTemplate);
 nodeTemplateMap.add("simple", simpleTemplate);
 nodeTemplateMap.add("simpleEdit", simpleEditTemplate);
 nodeTemplateMap.add("simplePic", simplePicTemplate);
