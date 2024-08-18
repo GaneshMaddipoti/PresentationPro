@@ -21,7 +21,7 @@ let javaNodeDataArray = [
     {key: "Processor", desc: "Processor", group: "CPU", category: "simple", img: "img/processor.svg", expand: false},
 
 
-    {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "menu", expand: true, img: "img/application.svg",},
+    {key: "Application", desc: "Application", isGroup: true, group: "Storage", category: "menu", expand: false, img: "img/application.svg",},
 
     {key: "Sourcecode", desc: "source", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
@@ -31,49 +31,22 @@ let javaNodeDataArray = [
     {key: "Bytecode", desc: "target", group: "Application", category: "menuItem", toolTipHTML: javaSourceCodeHTML, expand: true,},
     {key: "Package1", desc: "Package", group: "Application", category: "menuItem",expand: false, expand: true},
 
+    {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: true},
 
-    {key: "JDK", desc: "JDK", isGroup: true, group: "Java", category: "tree", toolTipHTML: jdkHTML, expand: false},
-    {key: "Java Compiler", desc: "Compiler", category: "simple", group: "JDK", img: "img/tools.svg"},
-    {key: "Java API", desc: "API", category: "tree", isGroup: true, group: "JDK",expand: false},
-
-    {key: "Class", desc: "class", group: "Java-Syntax", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},
-    {key: "Property", desc: "properties", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
-//    {key: "Property1", desc: " float price;", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
-    {key: "Method", desc: "methods", group: "Class", expand: false, isGroup: true, category: "menu", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
-
-    {key: "Java-Identifiers", desc: "Identifiers", group:"Method", category: "simpleText100", toolTipHTML: javaIdentifiersHTML},
-    {key: "Java-Datatypes", desc: "Datatypes", group:"Method", category: "simpleText100", toolTipHTML: javaDataTypeHTML},
-    {key: "Java-Statements", desc: "Statements", group:"Method", category: "menuItem1", toolTipHTML: javaStatementHTML},
-    {key: "Java-Conditions", desc: "Conditions", group:"Method", category: "simpleText100", toolTipHTML: javaFlowControlsHTML},
-    {key: "Java-Loops", desc: "Loops", group:"Method", category: "simpleText100", toolTipHTML: javaLoopsHTML},
-    {key: "Java-Exceptions", desc: "Exceptions", group:"Method", category: "simpleText100", toolTipHTML: javaExceptionsHTML},
-    {key: "Java-Generics", desc: "Generics", group:"Method", category: "simpleText100", toolTipHTML: javaGenericsHTML},
-
-
-//    {key: "Statement1", desc: "Integer amount = 195;", group: "Method", category: "simpleText", toolTipHTML: javaStatementHTML, img: "img/null.svg"},
-//    {key: "Statement2", desc: "if(rate !=0) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaFlowControlsHTML, img: "img/null.svg"},
-//    {key: "Statement3", desc: "for(int i=0; i<10; i++) { //stmts; }", group: "Method", category: "simpleText", toolTipHTML: javaLoopsHTML, img: "img/null.svg"},
-//    {key: "Statement4", desc: "try{ //stmts; } catch(Exceptin e) {}", group: "Method", category: "simpleText", toolTipHTML: javaExceptionsHTML, img: "img/null.svg"},
-
-    {key: "Interface", desc: "interface", group: "Java-Syntax", category: "simpleText100", toolTipHTML: javaInterfaceHTML, expand: false, img: "img/interface.svg",},
-    {key: "Enum", desc: "enum", group: "Java-Syntax", category: "simpleText100", expand: false,},
-    {key: "Record", desc: "record", group: "Java-Syntax", category: "simpleText100", expand: false,},
-
-    {key: "Java", desc: "Java", isGroup: true, group: "Storage", category: "grid3", img: "img/java.svg", toolTipHTML: javaHTML, expand: false},
     {key: "Java-Syntax", desc: "Syntax", group: "Java", isGroup:true, category: "tree", toolTipHTML: javaSyntaxHTML},
     {key: "Java-Literals", desc: "Literals", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLiteralHTML},
-
-
-    {key: "Java-String", desc: "String", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
-    {key: "Java-System", desc: "System", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
-    {key: "Java-Math", desc: "Math", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
-    {key: "Java-DateTime", desc: "DateTime", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
-
-    {key: "Java-WrapperClass", desc: "Wrapper Classes", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaWrapperClassHTML},
-    {key: "Java-Collections", desc: "Collections", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaCollectionsHTML},
-    {key: "Java-Iterators", desc: "Iterators", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaIteratorsHTML},
-    {key: "Java-Spliterators", desc: "Spliterators", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaSpliteratorsHTML},
-    {key: "Java-Streams", desc: "Streams", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStreamsHTML},
+    {key: "Java-Identifiers", desc: "Identifiers", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaIdentifiersHTML},
+    {key: "Java-Datatypes", desc: "Datatypes", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaDataTypeHTML},
+    {key: "Java-Statements", desc: "Statements", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaStatementHTML},
+    {key: "Java-Conditions", desc: "Conditions", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaFlowControlsHTML},
+    {key: "Java-Loops", desc: "Loops", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaLoopsHTML},
+    {key: "Java-Exceptions", desc: "Exceptions", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaExceptionsHTML},
+    {key: "Java-Generics", desc: "Generics", group:"Java-Syntax", category: "simpleText100", toolTipHTML: javaGenericsHTML},
+    {key: "Class", desc: "class", group: "Java-Syntax", isGroup: true, category: "tree", toolTipHTML: javaClassHTML,expand: false},
+    {key: "Property", desc: "properties", group: "Class", category: "simpleText", toolTipHTML: javaPropertyHTML, img: "img/private.svg"},
+    {key: "Method", desc: "methods", group: "Class", category: "simpleText", toolTipHTML: javaMethodHTML, img: "img/public.svg"},
+    {key: "Interface", desc: "interface", group: "Java-Syntax", category: "simpleText100", toolTipHTML: javaInterfaceHTML, expand: false, img: "img/interface.svg",},
+    {key: "Record", desc: "record", group: "Java-Syntax", category: "simpleText100", expand: false,},
 
     {key: "Java-Semantics", desc: "Semantics", isGroup: true, group: "Java", expand: false, category: "grid3"},
 
@@ -111,24 +84,9 @@ let javaNodeDataArray = [
     {key: "Java-SP-Interface-Segregation", desc: "Interface Segregation", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPInterfaceSegregationHTML},
     {key: "Java-SP-DI", desc: "Dependency Inversion", group:"Java-Solid", category: "simpleTextLeft150", toolTipHTML: javaSPDIHTML},
 
-//    {key: "Execution", desc: "Execution", category: "simple", group: "System", img: "img/tools.svg", toolTipHTML: executionHTML},
-
-
-    {key: "Meta", desc: "Meta", category: "grid3", group: "Memory", isGroup: true,},
-    {key: "class1", desc: "cls1", category: "box", group: "Meta", fill: "#3A5262"},
-    {key: "class2", desc: "cls2", category: "box", group: "Meta", fill: "#3A5262"},
-
-    {key: "Heap", desc: "Heap", category: "grid3", group: "Memory", isGroup: true,},
-    {key: "class1", desc: "cls1", category: "object", group: "Heap", fill: "#3A5262"},
-    {key: "class2", desc: "cls2", category: "object", group: "Heap", fill: "#3A5262"},
-    {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
-    {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
-    {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
-    {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
-
-    {key: "Stack", desc: "Stack", category: "grid3", group: "Memory", isGroup: true,},
-    {key: "thread1", desc: "thread1", category: "stack", group: "Stack", items: ["thread1" ,"", "ref1", "var1", "method1"]},
-
+    {key: "JDK", desc: "JDK", isGroup: true, group: "Java", category: "tree", toolTipHTML: jdkHTML, expand: false},
+    {key: "Java Compiler", desc: "Compiler", category: "simple", group: "JDK", img: "img/tools.svg"},
+    {key: "Java API", desc: "API", category: "tree", isGroup: true, group: "JDK",expand: false},
     {key: "Java VM", desc: "Java VM", isGroup: true, expand: false, category: "tree", group: "JDK"},
 
     {key: "Java Class Loader", desc: "Class Loader", isGroup: true, expand: true, category: "tree", group: "Java VM"},
@@ -147,7 +105,41 @@ let javaNodeDataArray = [
     {key: "Execution Engine", desc: "Exec Engine", isGroup: true, expand: true, category: "grid3", group: "Java VM"},
     {key: "Interpreter", desc: "Interpreter", category: "simple",  group: "Execution Engine"},
     {key: "JIT Compiler", desc: "JIT Compiler", category: "simple",  group: "Execution Engine"},
-    {key: "Garbage collector", desc: "Garbage Collector", category: "simple",  group: "Execution Engine"},
+    {key: "Garbage collector", desc: "GC", category: "simple",  group: "Execution Engine"},
+
+
+    {key: "Java-String", desc: "String", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+    {key: "Java-System", desc: "System", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+    {key: "Java-Math", desc: "Math", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+    {key: "Java-DateTime", desc: "DateTime", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStringHTML},
+
+    {key: "Java-WrapperClass", desc: "Wrapper Classes", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaWrapperClassHTML},
+    {key: "Java-Collections", desc: "Collections", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaCollectionsHTML},
+    {key: "Java-Iterators", desc: "Iterators", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaIteratorsHTML},
+    {key: "Java-Spliterators", desc: "Spliterators", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaSpliteratorsHTML},
+    {key: "Java-Streams", desc: "Streams", group:"Java API", category: "simpleTextLeft150", toolTipHTML: javaStreamsHTML},
+
+
+
+//    {key: "Execution", desc: "Execution", category: "simple", group: "System", img: "img/tools.svg", toolTipHTML: executionHTML},
+
+
+    {key: "Meta", desc: "Meta", category: "grid3", group: "Memory", isGroup: true,},
+    {key: "class1", desc: "cls1", category: "box", group: "Meta", fill: "#3A5262"},
+    {key: "class2", desc: "cls2", category: "box", group: "Meta", fill: "#3A5262"},
+
+    {key: "Heap", desc: "Heap", category: "grid3", group: "Memory", isGroup: true,},
+    {key: "class1", desc: "cls1", category: "object", group: "Heap", fill: "#3A5262"},
+    {key: "class2", desc: "cls2", category: "object", group: "Heap", fill: "#3A5262"},
+    {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
+    {key: "object1", desc: "obj1", category: "object", group: "Heap", fill: "Transparent"},
+    {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
+    {key: "object2", desc: "obj2", category: "object", group: "Heap", fill: "Transparent"},
+
+    {key: "Stack", desc: "Stack", category: "grid3", group: "Memory", isGroup: true,},
+    {key: "thread1", desc: "thread1", category: "stack", group: "Stack", items: ["thread1" ,"", "ref1", "var1", "method1"]},
+
+
 
 
 ];
@@ -168,8 +160,8 @@ let javaLinkDataArray = [
     {from:"Package1", to:"File1", category: "menuLink"},
 
     // {from:"Java-Statements", to:"Java-Literals", category: "menuLink"},
-    {from:"Java-Statements", to:"Java-Identifiers", category: "menuLink"},
-    {from:"Java-Statements", to:"Java-Datatypes", category: "menuLink"},
+    // {from:"Java-Statements", to:"Java-Identifiers", category: "menuLink"},
+    // {from:"Java-Statements", to:"Java-Datatypes", category: "menuLink"},
 
 
     { from: "Add1", fromPort: "Out", to: "Subtract1", toPort: "A" },

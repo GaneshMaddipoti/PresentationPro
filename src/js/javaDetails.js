@@ -286,34 +286,25 @@ Ex: byte value = (byte) 1000
 
 let javaLiteralHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-How to specify data/constant in code <br/>
-</div>
-<b>Literals</b><br/>
-<ul>
-<li>We need literals to represent data</li>
-<li>It's a character or word which denotes either integers, floats, string,
-and boolean values <br/>
-(Ex: 6, 23.332, 'A', "Hello", true, '\u0044'(unicode literal D))</li>
-<li>We can not put commas in a numberic literal, but we can use _ for readability <br/>
-Ex: long income = 1_234_456l;</li>
-</ul>
-<br/>
-<b>Integer Literals</b> <br/>
-<ul>
-<li>binary Base 2 - use only digits(0,1), and preceding 0b or 0B</li>
-<li>octal Base 8 - use only digits(0-7), and preceding 0</li>
-<li>Decimal Base 10 - use digits(0-9) no prefix of any kind</li>
-<li>Hexa decimal Base 16 - use digits (0-9) and A,B,C,D,E,F/a,b,c,d,e,f preceding 0x or 0X</li>
-</ul>
-<br/>
-<b>Floating point Literals</b> <br/>
-Ex: double val = 23.456;<br/>
-<br/>
-<b>Character Literals </b></br/>
-Ex: char ch = 'A'; <br/>
-<br/>
-<b>String Literals </b><br/>
-Ex: String str = "hello"; <br/>
+Literals <br/>
+</div><pre>
+int i = 0b010101;        //21 binary base 2, use only digits 0,1 
+int j = 0B0101010;       //42
+int k = 0456;            //302 octal base 8, use only digits 0-7
+int l = 789;             //789 decimal base 10, use digits 0-9
+int m = 0x9ABC;          //39612 hexa decimal base 16, 
+int n = 0X9ABC;          //use digits 0-9,A,B,C,D,E,F/a,b,c,d,e,f
+long income = 1_234_456l;//_ for readability, not commas
+long income = 1_234_456L;
+
+float p = 23.232f;       //floating point number
+float q = 23.3434F;
+double p = 23.232;
+
+char c = 'A';            //Character
+
+String s = "abc";        //String
+</pre>
 `;
 
 let javaSourceCodeHTML = `
@@ -416,7 +407,7 @@ native - used when interacting code written in other language <br/>
 
 let javaDataTypeHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-How to specify the type of data ?
+Data Types
 </div>
 <b>Data Types </b><br/>
 Java is statically typed language<br/>
@@ -435,8 +426,6 @@ There are 8 primitive data types
 <tr><td>8)</td><td>char</td><td>2 byte</td><td>0 to 65535</td></tr>
 </table>
 <ul>
-<li>Integer literals are int by default, we can put l or L as suffix to treat it as long</li>
-<li>Float literals are double by default, f or F as suffix to treat it as float</li>
 <li>For precise calculations use BigDecimal, because float, double will behave inconsistently</li>
 <li>All the primitives should be initialized with value before use, not null</li>
 </ul>
@@ -466,35 +455,29 @@ They are indexed from 0 <br/>
 
 let javaIdentifiersHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
-Where to store data temporarily during processing ?
+Identifiers
 </div>
-<b>Variables</b><br/>
-<ul>
-<li>Variables with given name, used to store and retrieve information in memory <br/>
-Ex: length = 120;
-</li>
-<li>A variable is statically typed to a primitive or object <br/>
-Ex: int length = 120, width = 60;
-</li>
-</ul>
-<br/>
-<b>Identifiers</b><br/>
-All the java components(classes, interfaces, enums, methods, variables) need names <br/>
-And these names are called identifiers and there are rules for legal identifiers.<br/>
-Classes - Camel case with first letter capital <br/>
-Methods - Camel case with first letter small <br/>
-Constants - All upper case with (_) to separate words(Snake) <br/>
-<br/>
-<b>Rules</b><br/>
-<ol>
-<li>Identifiers must start with a letter(currency symbol $,£, etc...),(_)</li>
+<pre>
+//(classes, interfaces, enums, methods, variables) need names 
+public class Box {          //Camel case with first letter capital
+    int width;              //used to store and retrieve information
+    int height;
+    static final int CONFIG_PARAM = 99999; //Constants
+    public int area() {     //Camel case with first letter small
+        return width*height;
+    }
+}
+</pre>
+
+<b>Rules</b>
+<ol><li>Identifiers must start with a letter(currency symbol $,£, etc...),(_)</li>
 <li>After first character, they can contain numbers also.</li>
 <li>There is no limit on number of characters</li>
 <li>You can’t use java keyword as an identifier</li>
 <li>Identifiers are case sensitive.</li>
 </ol>
 <br/>
-Java is case sensitive, while declaring variables, methods, classes, literals <br/>
+Java is case-sensitive, while declaring variables, methods, classes, literals <br/>
 <br/>
 `;
 
