@@ -284,7 +284,7 @@ Ex: byte value = (byte) 1000
 `;
 
 let scalaLiteralHTML = `
-<pre>
+<pre><code class="language-scala">//literals
 val i = 123   // defaults to Int
 val x = 1.0   // defaults to Double
 val x = 1_000L   // val x: Long = 1000
@@ -297,7 +297,7 @@ val b = 0xfd_3aL // val b: Long = 64826
 val c = 'a'     //Character
 
 val s = "Bill"  //String
-</pre>
+</code></pre>
 `;
 
 let scalaSourceCodeHTML = `
@@ -334,22 +334,17 @@ A file should contain only one public type, and that type name should match with
 
 let classHTML = `
 A class in Scala is a template for the creation of object instances
-<pre>
+<pre><code class="language-scala">//class
 class Person(var name: String, var vocation: String)    //mutable fields
 val p = Person("Robert Allen Zimmerman", "Harmonica Player")
 p.name       // "Robert Allen Zimmerman"
 p.vocation = "Musician" //we can change them
 
 class Person(var firstName: String, var lastName: String):
-
   println("initialization begins")  //initialized as part of default constructor
   val fullName = firstName + " " + lastName //additional fields
-
-  // a class method
-  def printFullName: Unit =
-    // access the \`fullName\` field, which is created above
+  def printFullName: Unit =     // a class method
     println(fullName)
-
   printFullName
   println("initialization ends")
   
@@ -370,19 +365,19 @@ class Student(
   ) =
     this(name, govtId)
     _applicationDate = Some(applicationDate)   
+</code>
 </pre>
 `;
 
 let objectHTML = `
-<pre>
-//An object is a class that has exactly one instance.
+<pre><code class="language-scala">//An object is a class that has exactly one instance.
 object StringUtils:
   def truncate(s: String, length: Int): String = s.take(length)
   def containsWhitespace(s: String): Boolean = s.matches(".*\\\\s.*")
   def isNullOrEmpty(s: String): Boolean = s == null || s.trim.isEmpty
 
 StringUtils.truncate("Chuck Bartowski", 5)  // "Chuck"  
-</pre>
+</code></pre>
 An object that has the same name as a class, in the same file as the class, is called a “companion object.” <br/>
 Similarly, the corresponding class is called the object’s companion class. <br/> 
 A companion class or object can access the private members of its companion. <br/>
@@ -437,14 +432,12 @@ They are indexed from 0 <br/>
 `;
 
 let scalaIdentifiersHTML = `
-<pre>
-<code class="language-scala">
-Variables
+<pre><code class="language-scala">//variables
 val a: Int = 0   // immutable and explicit
 var b = 1   // mutable and implicit
 
-//(classes, interfaces, enums, methods, variables) need names 
-public class Box {          //Camel case with first letter capital
+//(classes, traits, enums, methods, variables) need names 
+class Box {          //Camel case with first letter capital
     int width;              //used to store and retrieve information
     int height;
     static final int CONFIG_PARAM = 99999; //Constants
@@ -568,7 +561,7 @@ when you are making a lot of modifications to strings of characters, better to u
 `;
 
 let domainModelingHTML = `
-<pre>
+<pre><code class="language-scala">//definitions
 val timeout = 1000      //package level field
 def method(arg: String) : Unit = print(arg) //package level method
 
@@ -577,10 +570,12 @@ class Person(var firstName: String, var lastName: String):
   val fullName = firstName + " " + lastName //additional fields
   def printFullName: Unit =
     println(fullName) 
+</code></pre>
+<pre>
+Rule of thumb :
+Use classes whenever you want to create instances of a particular type,
+and traits when you want to decompose and reuse behaviour
 </pre>
-Rule of thumb : <br/>
-Use classes whenever you want to create instances of a particular type, <br/>
-and traits when you want to decompose and reuse behaviour. <br/>
 `;
 
 let scalaTraitsHTML = `
@@ -588,17 +583,17 @@ Scala trait is similar to an interface in Java 8+ <br/>
 Traits can contain: <br/>
 Abstract methods and fields <br/>
 Concrete methods and fields <br/>
-<pre>
+<pre><code class="language-scala">//traits
 trait Employee:
   def id: Int
   def firstName: String
   def lastName: String
-</pre>
+</code></pre>
 `;
 
 let caseClassesHTML = `
 Case classes are used to model immutable data structures. <br/>
-<pre>case class Person(name: String, relation: String)</pre>
+<pre><code class="language-scala">case class Person(name: String, relation: String)</code></pre>
 Since the fields of a case class are assumed to be immutable, the Scala compiler can generate many helpful methods <br/>
 
 An unapply method is generated, which allows you to perform pattern matching on a case class (that is, case Person(n, r) => ...). <br/>
@@ -631,10 +626,7 @@ fobj.abstractFun(5);
 `;
 
 let scalaFlowControlsHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-Flow Controls
-</div>
-<pre>
+<pre><code class="language-scala">//conditional expressions
 val x = if a < b then a else b      //if expression
 
 val result = i match    //like switch, but its an expression
@@ -646,17 +638,14 @@ val p = Person("Fred")
 p match
   case Person(name) if name == "Fred" =>
     println(s"$name says, Yubba dubba doo")
-
   case Person(name) if name == "Bam Bam" =>
     println(s"$name says, Bam bam!")
-
   case _ => println("Watch the Flintstones!")  
-</pre>
+</code></pre>
 `;
 
 let scalaLoopsHTML = `
-<pre>
-//for loop
+<pre><code class="language-scala">//loops
 val ints = List(1, 2, 3, 4, 5)
 for i <- ints do println(i)     //generators
 for
@@ -674,19 +663,14 @@ for
 do
   println(s"i = $i, j = $j")   // prints: "i = 2, j = b"
   
-//for expression
-val doubles = for i <- ints yield i * 2  
+val doubles = for i <- ints yield i * 2     //for expression
 
-//while construct
-while x >= 0 do x = f(x)
-</pre>
+while x >= 0 do x = f(x) //while construct
+</code></pre>
 `;
 
 let scalaExceptionsHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-Exception Handling
-</div>
-<pre>
+<pre><code class="language-scala">//exception handling
 try
   writeTextToFile(text)
 catch
@@ -694,7 +678,7 @@ catch
   case nfe: NumberFormatException => println("Got a NumberFormatException.")
 finally
   println("Clean up your resources here.")
-</pre>
+</code></pre>
 `;
 
 let scalaMultiThreadsHTML = `

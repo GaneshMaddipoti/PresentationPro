@@ -9,9 +9,9 @@ const stackTemplate =
           GO(go.Panel, "Auto",
             { margin: 0 },
             GO(go.Shape, "Rectangle",
-              { fill: "Transparent", width: 100, stroke: "WhiteSmoke" }),
+              { fill: "Transparent", width: 100, stroke: "WhiteSmoke", height: 15 }),
             GO(go.TextBlock, new go.Binding("text", ""),
-              { margin: 0, stroke: "#cccccc" })
+              { font: '500 12px monospace', margin: 0, stroke: "#cccccc" })
           )  // end of itemTemplate
       })
   );
@@ -20,7 +20,7 @@ const objectTemplate =
   GO(go.Node, "Auto",
     GO(go.Shape, "Ellipse", {stroke: "WhiteSmoke"}, new go.Binding("fill", "fill")),
     GO(go.TextBlock,
-      { margin: 5,  stroke: "#cccccc" },
+      { font: '500 12px monospace', margin: 5,  stroke: "#cccccc" },
       new go.Binding("text", "desc"))
   );
 
@@ -28,7 +28,7 @@ const boxTemplate =
     GO(go.Node, "Auto",
         GO(go.Shape, "RoundedRectangle", {stroke: "WhiteSmoke"}, new go.Binding("fill", "fill")),
         GO(go.TextBlock,
-            { margin: 5,  stroke: "#cccccc" },
+            { font: '500 12px monospace', margin: 5,  stroke: "#cccccc" },
             new go.Binding("text", "desc"))
     );
 
@@ -49,7 +49,7 @@ const simpleTemplate = GO(go.Node, "Auto", {selectionAdorned: false},
     {isShadowed: true, shadowBlur: 1, shadowColor: colors.blackShadow,
            shadowOffset: new go.Point(5, 5), fromSpot: go.Spot.AllSides,  toSpot: go.Spot.AllSides},
     GO(go.Shape, "RoundedRectangle",
-                {height: 40}, new go.Binding("height", "height"),
+                {height: 35}, new go.Binding("height", "height"),
                 {width: 100}, new go.Binding("width", "width"),
                 {fill: "Transparent", stroke: "WhiteSmoke"}),
     GO(go.TextBlock, textStyle150(), new go.Binding("text", "desc")),
@@ -355,7 +355,7 @@ const menuItemTemplate = GO(go.Node,
           new go.Binding('source', 'isTreeExpanded', imageConverter).ofObject(),
           new go.Binding('source', 'isTreeLeaf', imageConverter).ofObject()
         ),
-        GO(go.TextBlock, { font: '500 16px Roboto, sans-serif', stroke: "#cccccc" }, new go.Binding('text', 'desc'))
+        GO(go.TextBlock, { font: '500 14px monospace', stroke: "#cccccc" }, new go.Binding('text', 'desc'))
       ) // end Horizontal Panel
     ); // end Node
 
@@ -419,7 +419,7 @@ const menuItem1Template = GO(go.Node,
           new go.Binding('source', 'isTreeExpanded', imageConverter1).ofObject(),
           new go.Binding('source', 'isTreeLeaf', imageConverter1).ofObject()
         ),
-        GO(go.TextBlock, { font: '500 16px Roboto, sans-serif', stroke: "#cccccc" }, new go.Binding('text', 'desc'))
+        GO(go.TextBlock, { font: '500 14px monospace', stroke: "#cccccc" }, new go.Binding('text', 'desc'))
       ) // end Horizontal Panel
     ); // end Node
 

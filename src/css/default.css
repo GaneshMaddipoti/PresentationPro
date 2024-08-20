@@ -13,15 +13,16 @@
 }
 
 body {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: monospace;
   border-radius: 5px;
   margin:0px;overflow-x: hidden;overflow-y: hidden;
   background: #2A4252;
 }
 
 pre {
-    font-size: 12pt;
-    background: #444444;
+    font-size: 10pt;
+    background: transparent;
+    white-space: pre-wrap;
 }
 
 a {
@@ -50,8 +51,8 @@ a {
     color: #cccccc;
     z-index: 1000;
     display: none;
-    font-family: Roboto, Arial, serif;
-    font-size: 18px;
+    font-family: monospace;
+    font-size: 14px;
     font-weight: lighter;
     padding: 40px 40px;
     /*width: 300px;*/
@@ -78,7 +79,7 @@ a {
     color: #cccccc;
     z-index: 1000;
     display: none;
-    font-family: Roboto, Arial, serif;
+    font-family: monospace;
     font-size: 18px;
     font-weight: lighter;
     padding: 40px 40px;
@@ -139,9 +140,9 @@ a {
     top: 0px;
     right: 0px;
     border: 0px;
-    border-radius: 5px;
+    border-radius: 3px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     opacity: 0;
 }
 

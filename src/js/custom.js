@@ -188,6 +188,7 @@ function showToolTip(obj, diagram, tool) {
         toolTipDIV.style.opacity = "1";
         toolTipDIV.style.display = "block";
         toolTipFlag = true;
+        hljs.highlightAll();
     }
 }
 
