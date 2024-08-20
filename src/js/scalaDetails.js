@@ -436,14 +436,11 @@ let scalaIdentifiersHTML = `
 val a: Int = 0   // immutable and explicit
 var b = 1   // mutable and implicit
 
-//(classes, traits, enums, methods, variables) need names 
-class Box {          //Camel case with first letter capital
-    int width;              //used to store and retrieve information
-    int height;
-    static final int CONFIG_PARAM = 99999; //Constants
-    public int area() {     //Camel case with first letter small
-        return width*height;
-    }
+//(classes, traits, enums) - Camel case with first letter capital
+class Person(var firstName: String, var lastName: String):
+  val fullName = firstName + " " + lastName //additional fields
+  def printFullName: Unit =     //Camel case with first letter small
+    println(fullName) 
 }
 </code>
 </pre>

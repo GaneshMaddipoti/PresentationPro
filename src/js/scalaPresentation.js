@@ -48,7 +48,6 @@ let scalaNodeDataArray = [
     {key: "Object", desc: "object", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: objectHTML},
     {key: "Traits", desc: "trait", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: scalaTraitsHTML},
     {key: "Case-Class", desc: "case class", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: caseClassesHTML},
-    {key: "Record", desc: "record", group: "Scala-Syntax", category: "simpleText100", expand: false,},
 
     {key: "Scala-Semantics", desc: "Semantics", isGroup: true, group: "Scala", expand: false, category: "grid3"},
 
