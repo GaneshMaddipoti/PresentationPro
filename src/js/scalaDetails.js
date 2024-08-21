@@ -182,7 +182,8 @@ val postFix = 1 isNaN //postfix notation isNan(1)
 val apply = Robot() //calls companion objects apply method Robot.apply()
 
 //Inheritance
-class Animal(name: String) {
+class Animal(name: String) { //we can prevent extend using final
+//using sealed we can prevent extend in other files   
   def eat() = println("eating") // we can prevent overriding using final
 }
 class Cat(name: String) extends Animal(name) {
@@ -214,8 +215,50 @@ Similarly, the corresponding class is called the object’s companion class. <br
 A companion class or object can access the private members of its companion. <br/>
 `;
 
+let abstractClassesHTML = `
+Type of Thing <br/>
+Classes with unimplemented members are called abstract classes. <br/>
+Abstract classes can't be instantiated. <br/>
+We can extend only one abstract class. <br/>
+Abstract classes can contain: <br/>
+Abstract methods and fields <br/>
+Concrete methods and fields <br/>
+<pre><code class="language-scala">//abstract classes
+abstract class Animal {
+  val animalType:String
+  def eat() : Unit
+}
+class Dog extends Animal {
+  override val animalType: String = "Dog"
+  override def eat(): Unit = print("eat")
+}
+</code>
+</pre>
+`;
 
+let scalaTraitsHTML = `
+Type of behavior <br/>
+Scala traits are ultimate abstract types<br/>
+We can extend more than one trait 
+Traits can contain: <br/>
+Abstract methods and fields <br/>
+Concrete methods and fields <br/>
+<pre><code class="language-scala">//traits
+abstract class Animal {
+  val animalType:String
+  def walk() : Unit
+}
 
+trait Carnivore {
+  def eat(): Unit
+}
+class Dog extends Animal, Carnivore {
+  override val animalType: String = ???
+  override def walk(): Unit = ???
+  override def eat(): Unit = ???
+}
+</code></pre>
+`;
 
 
 
@@ -608,19 +651,6 @@ and traits when you want to decompose and reuse behaviour
 </pre>
 `;
 
-let scalaTraitsHTML = `
-Scala trait is similar to an interface in Java 8+ <br/>
-Traits can contain: <br/>
-Abstract methods and fields <br/>
-Concrete methods and fields <br/>
-<pre><code class="language-scala">//traits
-trait Employee:
-  def id: Int
-  def firstName: String
-  def lastName: String
-</code></pre>
-`;
-
 let caseClassesHTML = `
 Case classes are used to model immutable data structures. <br/>
 <pre><code class="language-scala">case class Person(name: String, relation: String)</code></pre>
@@ -843,37 +873,16 @@ class SalaryComparator implements Comparator<MyCollection> {
 `;
 
 let scalaGenericsHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-Can we have dynamic type properties and dynamic type argument methods ?
-</div>
-<b>Generic Classes </b> <br/>
-We can make a class more generic by adding &lt; &gt; <br/>
-<div class="sourceCode">class Printer&lt;T extends Animal & Serializable &gt; {
-    T object;
-    Printer(T object) {
-        this.object = object;
-    }
-    public void print() {
-        System.out.println(object);
-    }
-}</div>
-E - Element (used extensively by the Scala Collections Framework) <br/>
-K - Key                                                          <br/>
-N - Number                                                       <br/>
-T - Type                                                         <br/>
-V - Value                                                        <br/>
-S,U,V etc. - 2nd, 3rd, 4th types                                 <br/>
-<br/>
-<b>Generic Methods</b> <br/>
-We can also make a method generic by adding &lt; &gt;
-<div class="sourceCode">public static &lt;T&gt; void print(T thing) {
-    System.out.println(thing);
-}</div>
-And, if we want to pass any type of collection to that method <br/>
-We know that Object is the supertype of all Scala classes. However, a collection of Object is not the supertype of any collection. <br/>
-<div class="sourceCode">public static void print(List&lt;?&gt; thing) {
-    System.out.println(thing);
-}</div>
+<pre><code class="language-scala">//Generic classes
+class MyList[A]
+class MyMap[key, Value]
+
+//Generic methods
+object MyList {
+  def empty[A]: MyList[A] = ???
+}
+</code>
+</pre>
 `;
 
 let scalaIteratorsHTML = `Iterator is an interface which is used to iterate over a collection <br/>

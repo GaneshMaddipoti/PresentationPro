@@ -48,6 +48,7 @@ let scalaNodeDataArray = [
     {key: "Domain-Modeling", desc: "Domain Modeling", group: "Scala-Syntax", isGroup: true, category: "tree", toolTipHTML: domainModelingHTML, expand: false},
     {key: "Class", desc: "class", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: classHTML},
     {key: "Object", desc: "object", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: objectHTML},
+    {key: "Abstract-Classes", desc: "abstract classes", group: "Domain-Modeling", category: "simpleTextLeft150", toolTipHTML: abstractClassesHTML},
     {key: "Traits", desc: "trait", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: scalaTraitsHTML},
     {key: "Case-Class", desc: "case class", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: caseClassesHTML},
 
