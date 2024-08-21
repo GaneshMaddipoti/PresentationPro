@@ -1,3 +1,237 @@
+let scalaHTML = `
+<pre>
+Scala is a programming language developed by Martin Odersky, in 2004 
+The name Scala stands for scalable language 
+We can apply Scala to wide variety of programs from small scripts to large systems.
+It runs on the standard java and javascript platforms.
+It is blend of OOP and FP in statically typed language.
+Scales FP constructs make it easy to build interesting things quickly from simple parts.
+Its OOP constructs make it easy to build large systems and adapt them to new standards.
+
+Scala grows on 
+1. Types - we can add new types as libraries 
+2. Control constructs 
+
+Functional programming 
+1. Functions are first class values 
+2. Pure functions map input values to output values without change them in place 
+
+Why Scala?
+1. Scala is compatible
+2. Scala is concise
+3. Scala is high level
+4. Scala is statically typed
+</pre>
+`;
+
+let scalaLiteralHTML = `
+<pre><code class="language-scala">//literals
+val i = 123   // defaults to Int
+val x = 1.0   // defaults to Double
+val x = 1_000L   // val x: Long = 1000
+val y = 2.2D     // val y: Double = 2.2
+val z = -3.3F    // val z: Float = -3.3
+//Hexadecimal literals starts with 0x
+val a = 0xACE    // val a: Int = 2766
+val b = 0xfd_3aL // val b: Long = 64826
+
+val c = 'a'     //Character
+
+val s = "Bill"  //String
+</code></pre>
+`;
+
+let scalaIdentifiersHTML = `
+<pre><code class="language-scala">//variables
+val a: Int = 0   // immutable and explicit
+var b = 1   // mutable and implicit
+
+//(classes, traits, enums) - Camel case with first letter capital
+class Person(var firstName: String, var lastName: String):
+  val fullName = firstName + " " + lastName //additional fields
+  def printFullName: Unit =     //Camel case with first letter small
+    println(fullName) 
+}
+</code>
+</pre>
+<pre>
+Rules
+1) You cannot use a Scala keyword as identifier in Scala.
+2) There is no upper limit to the number of characters used in the identifier. 
+3) An identifier cannot start with digits.
+4) Scala identifiers are case-sensitive. 
+
+In Scala, we have 4 different types of identifiers defined.
+1) Alphanumeric Identifiers //Scala123
+2) Operator Identifiers     //+, ===
+3) Mixed Identifiers        //val_, avg+
+4) Literal Identifiers      
+</pre>
+
+`;
+
+let scalaDataTypeHTML = `
+<pre><code class="language-scala">//Data Types
+val aBoolean: Boolean = true          // or false
+val aByte: Byte = 127                 // 8 bit
+val aShort: Short = 12122             // 16 bit
+val aInt: Int = 434443                // 32 bit
+val aLong: Long = 4324343242432L      // 64 bit
+
+val aFloat: Float = 233.232F          // 32 bit
+val aDouble: Double = 23232.232323    // 64 bit
+
+val aChar: Char = 'c'                 // 16 bit
+</code></pre>
+<pre>Scala can infer the type of val, methods if we dont specify</pre>
+`;
+
+let scalaExpressionsHTML = `
+<pre>
+<code class="language-scala">//Expressions
+val x = 1 + 2 //Expression evaluates to a value and type
+val aCodeblock = {
+  val x = 0
+  x = x + 1     //this will be the value and type of this block    
+}
+
+val value =  { print("value"); 10 }          //value initialized
+lazy val lazyValue =  { print("lazy value"); 20 } //lazyValue initialized upon call
+def valueDef = { print("lazy value"); 30 }       //valueDef will be defined 
+</code>
+</pre>
+<pre>
+Instruction/statement (Do) vs. Expression (value and type)
+Everything in Scala is an expression except definitions(val, class, etc..)
+Side effects : print, while, assignment are expression returning Unit
+Code blocks also expressions, value of it is the value of last expression.
+
+Operators
+1. Arithmetic - +, - , *, / , % (works with numbers)
+2. Relational >, >=, <, <=, !, !=  (works with numbers)
+3. Logical &&, || (works with booleans)
+4. Bitwise &, |, ^, ~, <<, >> (works with bits)
+5. Equality operator == (works with numbers, objects, etc...)
+</pre>
+`;
+
+let scalaFunctionsHTML = `
+<pre>
+<code class="language-scala">//Functions
+def method(arg0: String): String = arg0 + "!"
+
+def callByName(arg0: => Long): Unit = {
+  println(arg0)           //331455163593500
+  println(arg0)           //331455164030333
+}
+
+//default and named parameters
+def savePicture(name: String, size: Long = 100): Unit = {
+  //body
+}
+savePicture(name="Sample")
+</code></pre>
+<pre>When you need loops, use tail recursion.
+Functions that returns Unit, mostly do side effects.
+We can define functions inside a function //auxiliary function
+We you define function outside a class/object, its in package
+
+Call by Value   : value is evaluated before call
+Call by name    : expression as anonymous object is passed  
+</pre>
+`;
+
+let classHTML = `
+A class in Scala is a template for the creation of object instances. <br/>
+It encapsulates data and behavior of the object.
+<pre><code class="language-scala">//class
+class Person(name: String, age: Int) //no setters and getters
+class Person(val name: String, val age: Int) //only getters
+class Person(var name: String, var vocation: String) //getters and setters
+val p = Person("Robert Allen Zimmerman", "Harmonica Player")
+p.name       // "Robert Allen Zimmerman"
+p.vocation = "Musician" //we can change them
+
+class Person(var firstName: String, var lastName: String):
+  val fullName = firstName + " " + lastName //additional fields
+  def printFullName: Unit =     // a class method
+    println(fullName)
+  printFullName
+  
+//class constructor parameters can also have default values:
+class Socket(val timeout: Int = 5_000, val linger: Int = 5_000):
+  override def toString = s"timeout: $timeout, linger: $linger"
+  
+//we can have multiple constructors - auxiliary constructors   
+class Student(
+  var name: String,
+  var govtId: String
+):
+  private var _applicationDate: Option[LocalDate] = None
+  def this(
+    name: String,
+    govtId: String,
+    applicationDate: LocalDate
+  ) =
+    this(name, govtId)
+    _applicationDate = Some(applicationDate)   
+    
+val prefix = -1 //prefix notation 1.unary_- (works with -,+,~,!)    
+val infix = 1 + 2   //infix notation 1.+(2)
+val postFix = 1 isNaN //postfix notation isNan(1)
+val apply = Robot() //calls companion objects apply method Robot.apply()
+
+//Inheritance
+class Animal(name: String) {
+  def eat() = println("eating") // we can prevent overriding using final
+}
+class Cat(name: String) extends Animal(name) {
+  override def eat() = println("eats") //we can override val/var also
+}
+new Cat("Some").eat()
+val animal:Animal = new Cat("another") //polymorphism
+</code>
+</pre>
+`;
+
+let objectHTML = `
+<pre><code class="language-scala">//An object is a class that has exactly one instance.
+object StringUtils:
+  def truncate(s: String, length: Int): String = s.take(length)
+  def containsWhitespace(s: String): Boolean = s.matches(".*\\\\s.*")
+  def isNullOrEmpty(s: String): Boolean = s == null || s.trim.isEmpty
+
+StringUtils.truncate("Chuck Bartowski", 5)  // "Chuck"  
+
+class Robot(var name: String) { //companion class
+}
+object Robot{                   //companion object
+  def apply(): Robot = new Robot("ganesh")
+}
+</code></pre>
+An object that has the same name as a class, in the same file as the class, is called a “companion object.” <br/>
+Similarly, the corresponding class is called the object’s companion class. <br/> 
+A companion class or object can access the private members of its companion. <br/>
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let titleHTML = `
 <table style="width: 100%; align:center">
 <tr>
@@ -54,32 +288,6 @@ Content
 </ul>
 <b>Users</b>
 <ul><li>Anyone who wants to learn Scala language from zero to advanced</li></ul>
-`;
-
-let scalaHTML = `
-Scala is a programming language developed by Martin Odersky, in 2004 <br/>
-The name Scala stands for scalable language <br/>
-We can apply Scala to wide variety of programs from small scripts to large systems.<br/>
-It runs on the standard java and javascript platforms.<br/>
-It is blend of OOP and FP in statically typed language.<br/>
-Scales FP constructs make it easy to build interesting things quickly from simple parts.<br/>
-Its OOP constructs make it easy to build large systems and adapt them to new standards.<br/>
-<br/>
-Scala grows on <br/>
-1. Types - we can add new types as libraries <br/>
-2. Control constructs <br/>
-<br/>
-Functional programming <br/>
-1. Functions are first class values <br/>
-2. Pure functions map input values to output values without change them in place <br/>
-<br/>
-Why Scala?<br/>
-1. Scala is compatible<br/>
-2. Scala is concise<br/>
-3. Scala is high level<br/>
-4. Scala is statically typed<br/>
-
-<br/>
 `;
 
 let scalaEncapsulationHTML = `
@@ -280,25 +488,15 @@ Ex: int, byte, for, which, try, catch, class, interface, enum, etc...<br/>
 
 <b>Casting</b><br/>
 We can change the data type from one to another using casting <br/>
-Ex: byte value = (byte) 1000
+Ex: byte value = (byte) 1000 <br/>
+<br/>
+String interpolation <br/>
+val name = "Example" <br/>
+print(s"$name is printed") <br/>
+print(f"$name%s is printed") <br/>
 `;
 
-let scalaLiteralHTML = `
-<pre><code class="language-scala">//literals
-val i = 123   // defaults to Int
-val x = 1.0   // defaults to Double
-val x = 1_000L   // val x: Long = 1000
-val y = 2.2D     // val y: Double = 2.2
-val z = -3.3F    // val z: Float = -3.3
-//Hexadecimal literals starts with 0x
-val a = 0xACE    // val a: Int = 2766
-val b = 0xfd_3aL // val b: Long = 64826
 
-val c = 'a'     //Character
-
-val s = "Bill"  //String
-</code></pre>
-`;
 
 let scalaSourceCodeHTML = `
 <b>Source Code</b><br/>
@@ -330,171 +528,6 @@ A file should contain only one public type, and that type name should match with
 7) explicitly importing using class name, takes precedence over * <br/>
 &emsp; import scala.sql.Date; <br/>
 &emsp; import scala.util.*; &emsp; &emsp; - it works <br/>
-`;
-
-let classHTML = `
-A class in Scala is a template for the creation of object instances
-<pre><code class="language-scala">//class
-class Person(var name: String, var vocation: String)    //mutable fields
-val p = Person("Robert Allen Zimmerman", "Harmonica Player")
-p.name       // "Robert Allen Zimmerman"
-p.vocation = "Musician" //we can change them
-
-class Person(var firstName: String, var lastName: String):
-  println("initialization begins")  //initialized as part of default constructor
-  val fullName = firstName + " " + lastName //additional fields
-  def printFullName: Unit =     // a class method
-    println(fullName)
-  printFullName
-  println("initialization ends")
-  
-//class constructor parameters can also have default values:
-class Socket(val timeout: Int = 5_000, val linger: Int = 5_000):
-  override def toString = s"timeout: $timeout, linger: $linger"
-  
-//we can have multiple constructors - auxiliary constructors   
-class Student(
-  var name: String,
-  var govtId: String
-):
-  private var _applicationDate: Option[LocalDate] = None
-  def this(
-    name: String,
-    govtId: String,
-    applicationDate: LocalDate
-  ) =
-    this(name, govtId)
-    _applicationDate = Some(applicationDate)   
-</code>
-</pre>
-`;
-
-let objectHTML = `
-<pre><code class="language-scala">//An object is a class that has exactly one instance.
-object StringUtils:
-  def truncate(s: String, length: Int): String = s.take(length)
-  def containsWhitespace(s: String): Boolean = s.matches(".*\\\\s.*")
-  def isNullOrEmpty(s: String): Boolean = s == null || s.trim.isEmpty
-
-StringUtils.truncate("Chuck Bartowski", 5)  // "Chuck"  
-</code></pre>
-An object that has the same name as a class, in the same file as the class, is called a “companion object.” <br/>
-Similarly, the corresponding class is called the object’s companion class. <br/> 
-A companion class or object can access the private members of its companion. <br/>
-`;
-
-let scalaDataTypeHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-Data Types
-</div>
-<b>Data Types </b><br/>
-Scala is statically typed language<br/>
-Data is declared of type primitive, array, string, and object <br/>
-<br/>
-<b>Primitives</b><br/>
-There are 8 primitive data types
-<table>
-<tr><td>1)</td><td width="200px">Boolean</td><td width="200px">1 bit</td><td>true/false</td></tr>
-<tr><td>2)</td><td>Byte</td><td>1 byte</td><td>-128 to 127</td></tr>
-<tr><td>3)</td><td>Short</td><td>2 byte</td><td>-32768 to 32767</td></tr>
-<tr><td>4)</td><td>Int</td><td>4 byte</td><td>-2^31 to 2^31-1</td></tr>
-<tr><td>5)</td><td>Long</td><td>8 byte</td><td>-2^63 to 2^63-1</td></tr>
-<tr><td>6)</td><td>Float</td><td>4 byte</td><td>Ex: 123.45f</td></tr>
-<tr><td>7)</td><td>Double</td><td>8 byte</td><td>Ex: 123.456</td></tr>
-<tr><td>8)</td><td>Char</td><td>2 byte</td><td>0 to 65535</td></tr>
-</table>
-<ul>
-<li>For precise calculations use BigDecimal, because float, double will behave inconsistently</li>
-<li>All the primitives should be initialized with value before use, not null</li>
-</ul>
-<br/>
-<b>Local Variable Type inference </b><br/>
-The compiler will infer the type of the local variable by its declaration <br/>
-var length = 50; <br/>
-var can not be null, Ex : var length = null;(invalid) <br/>
-<br/>
-<b>Enums</b><br/>
-Scala lets you restrict a variable to having one of only a few predefined values<br/>
-Ex: enum CoffeeSize {BIG,HUGE,SMALL,LARGE}; <br/>
-In enums, you can add constructors, variables, methods. <br/>
-Every enum has a static method, values() that returns an array of the enum’s values. <br/>
-<br/>
-<b>Arrays</b><br/>
-Arrays are objects that store multiple variables of the same type or variables that are all subclasses of the same type.<br/>
-Declare: Arrays are declared by stating the type of elements <br/>
-Ex: int[] marks; <br/>
-Construct: Arrays are constructed/created on heap with mentioned size <br/>
-Ex: int[] marks = new int[100]; <br/>
-Initialize: Arrays initialization means that putting things into it <br/>
-Ex: int[] marks = {11, 12, 13, 14}; <br/>
-&emsp;&emsp; marks[0] = 21; <br/>
-They are indexed from 0 <br/>
-`;
-
-let scalaIdentifiersHTML = `
-<pre><code class="language-scala">//variables
-val a: Int = 0   // immutable and explicit
-var b = 1   // mutable and implicit
-
-//(classes, traits, enums) - Camel case with first letter capital
-class Person(var firstName: String, var lastName: String):
-  val fullName = firstName + " " + lastName //additional fields
-  def printFullName: Unit =     //Camel case with first letter small
-    println(fullName) 
-}
-</code>
-</pre>
-<b>Rules</b>
-<ol><li>Identifiers must start with a letter(currency symbol $,£, etc...),(_)</li>
-<li>After first character, they can contain numbers also.</li>
-<li>There is no limit on number of characters</li>
-<li>You can’t use scala keyword as an identifier</li>
-<li>Identifiers are case sensitive.</li>
-</ol>
-<br/>
-Scala is case-sensitive, while declaring variables, methods, classes, literals <br/>
-<br/>
-`;
-
-let scalaStatementHTML = `
-<div class="reqBanner"><img class="reqBannerImg"/>
-Expression vs Statement
-</div>
-An expression returns a result, while a statement does not. <br/>
-Statements are typically used for their side-effects, such as using println to print to the console.<br/>
-<br/>
-<b>Expression </b><br/>
-An expression is a construct with operator and operands, that evaluates to a single value <br/>
-This will be the code segment on the right side of = operator, in an assignment or declaration statement <br/>
-Ex : (orderNumber + 100) <br/>
-<br/>
-<b>Statement </b><br/>
-It's a complete command to be executed terminated by ; <br/>
-It can include assignment/one or more expressions <br/>
-Ex : total = orderValue + tax; <br/>
-<br/>
-<b>Declaration</b><br/>
-Ex: val length <br/>
-<br/>
-<b>Initialization </b><br/>
-Ex: val length = 50 <br/>
-<br/>
-<b>Operators</b><br/>
-The operator performs an operation on variables/literals its used with <br/>
-Ex : +, -, *, >, etc... <br/>
-<table>
-<tr><td>1)</td><td width="300px">Assignment</td><td>=</td></tr>
-<tr><td>2)</td><td >Compound Assignment </td><td>+=, -=, *=, /=, etc...</td></tr>
-<tr><td>3)</td><td >Arithmetic</td><td>+, -, *, /, %</td></tr>
-<tr><td>4)</td><td>Increment & Decrement</td><td>++, --</td></tr>
-<tr><td>5)</td><td>Relational</td><td><, <=, >, >=, ==, !=</td></tr>
-<tr><td>6)</td><td>Logical</td><td>&, |, ^, !, &&, ||</td></tr>
-<tr><td>7)</td><td>Bitwise</td><td>&, |, ^, ~</td></tr>
-<tr><td>8)</td><td>Conditional</td><td>? : </td></tr>
-<tr><td>9)</td><td>Type check</td><td>instanceOf</td></tr>
-</table>
-<br/>
-
 `;
 
 let scalaArraysHTML = `

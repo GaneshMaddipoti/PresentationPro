@@ -37,7 +37,9 @@ let scalaNodeDataArray = [
     {key: "Scala-Literals", desc: "Literals", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaLiteralHTML},
     {key: "Scala-Identifiers", desc: "Identifiers", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaIdentifiersHTML},
     {key: "Scala-Datatypes", desc: "Datatypes", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaDataTypeHTML},
-    {key: "Scala-Statements", desc: "Expressions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaStatementHTML},
+    {key: "Scala-Expressions", desc: "Expressions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaExpressionsHTML},
+    {key: "Scala-Functions", desc: "Functions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaFunctionsHTML},
+
     {key: "Scala-Conditions", desc: "Conditions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaFlowControlsHTML},
     {key: "Scala-Loops", desc: "Loops", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaLoopsHTML},
     {key: "Scala-Exceptions", desc: "Exceptions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaExceptionsHTML},
