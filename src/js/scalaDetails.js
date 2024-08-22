@@ -24,6 +24,46 @@ Why Scala?
 </pre>
 `;
 
+let scalaSyntaxHTML = `<pre>
+<code class="language-scala">package com
+import scala.{Array, Int} //importing specific classes in package
+import scala._            //importing all in that package
+import scala.{Int => Integer} //name aliasing at imports
+// used for comments
+/*
+ *used for multi line comments
+*/
+/**
+ * used for Scala doc comments
+ */
+package object jtechy {
+  //define constants and methods accessible in that package
+  val pi = 3.23223
+  def convertToString(arg: Any): String = {
+    arg.toString
+  }
+}
+</code></pre>
+<pre>
+<b>Keywords</b>
+It's a reserved word, have predefined meaning in scala language 
+Ex: if, then, else, for, do, while, try, catch, throw, finally, etc...
+
+String interpolation 
+val name = "Example" 
+print(s"$name is printed") 
+print(f"$name%s is printed") 
+
+Packages and Imports
+1. Types defined in a package are accessible within the package
+2. Types defined in other package need to be imported for use
+3. Packages and types are in hierarchy similar to folders and files
+4. Package objects holds val/var/def outside ADT(class, object, etc...)
+5. A package contains one package object with same name as package 
+6. A package object reside in package.scala file under that package
+</pre>
+`;
+
 let scalaLiteralHTML = `
 <pre><code class="language-scala">//literals
 val i = 123   // defaults to Int
@@ -139,6 +179,73 @@ We you define function outside a class/object, its in package
 Call by Value   : value is evaluated before call
 Call by name    : expression as anonymous object is passed  
 </pre>
+`;
+
+let conditionsHTML = `
+<pre><code class="language-scala">//conditional expressions
+val x = if a < b then a else b      //if expression
+
+val result = i match    //like switch, but its an expression
+  case 1 => "one"
+  case 2 => "two"
+  case _ => "other"
+  
+val p = Person("Fred")
+p match
+  case Person(name) if name == "Fred" =>
+    println(s"$name says, Yubba dubba doo")
+  case Person(name) if name == "Bam Bam" =>
+    println(s"$name says, Bam bam!")
+  case _ => println("Watch the Flintstones!")  
+</code></pre>
+`;
+
+let scalaLoopsHTML = `
+<pre><code class="language-scala">//loops
+val ints = List(1, 2, 3, 4, 5)
+for i <- ints do println(i)     //generators
+for
+  i <- ints
+  if i > 2                      //guards
+do
+  println(i)
+  
+//You can use multiple generators and guards.
+for
+  i <- 1 to 3
+  j <- 'a' to 'c'
+  if i == 2
+  if j == 'b'
+do
+  println(s"i = $i, j = $j")   // prints: "i = 2, j = b"
+  
+val doubles = for i <- ints yield i * 2     //for expression
+
+while x >= 0 do x = f(x) //while construct
+</code></pre>
+`;
+
+let scalaExceptionsHTML = `
+<pre><code class="language-scala">//exception handling
+
+//We can raise exceptions 
+throw new NullPointerException
+
+//We can handle exceptions
+try
+  writeTextToFile(text)
+catch
+  case ioe: IOException => println("Got an IOException.")
+  case nfe: NumberFormatException => println("Got a NumberFormatException.")
+finally
+  //this block is optional, also does not influence the type
+  println("Clean up your resources here.")
+
+//We can define custom exceptions also
+class MyException extends Exception
+  
+</code></pre>
+
 `;
 
 let classHTML = `
@@ -260,8 +367,48 @@ class Dog extends Animal, Carnivore {
 </code></pre>
 `;
 
+let caseClassesHTML = `
+Case classes are used to model immutable data structures. <br/>
+<pre><code class="language-scala">case class Person(name: String, relation: String)</code></pre>
+<pre>
+1. case class parameters are fields with values (immutable) 
+2. toString() is implemented OOTB 
+3. equals() and hashcode() is implemented OOTB
+4. copy() method is implemented OOTB
+5. case classes have companion objects
+6. they are serializable
+7. they can be used in pattern matching  
+</pre>
+`;
 
+let enumsHTML = `
+<pre><code class="language-scala">//enums for defining ADT taking defined values only
+enum Permissions(bits: Int) {
+  case READ extends Permissions(4)  //100
+  case WRITE extends Permissions(2) //010
+  case EXECUTE extends Permissions(1) //001
+  case NONE extends Permissions(0) //000
+}
 
+object Permissions {
+  def apply(bits: Int): Permissions = bits match {
+    case 4 => Permissions.READ
+    case 2 => Permissions.WRITE
+    case 1 => Permissions.EXECUTE
+    case 0 => Permissions.NONE
+  }
+}
+
+object Robot extends App {
+  private val permissions: Permissions = Permissions(2)
+  println(permissions)
+  println(permissions.ordinal)
+  for ps <- Permissions.values do println(ps)
+  println(Permissions.valueOf("NONE"))
+}
+</code>
+</pre>
+`;
 
 
 
@@ -515,29 +662,7 @@ Using -cp option, we can specify classpath location/jar to run <br/>
 `;
 
 
-let scalaSyntaxHTML = `
-// used for comments <br/>
-/* <br/>
- *<br/>
-*/ used for multi line comments <br/>
-/** <br/>
- *<br/>
-*/ used for Scala doc comments <br/>
-<br/>
-<b>Keywords</b><br/>
-It's a reserved word, have predefined meaning in scala language <br/>
-Ex: int, byte, for, which, try, catch, class, interface, enum, etc...<br/>
-<br/>
 
-<b>Casting</b><br/>
-We can change the data type from one to another using casting <br/>
-Ex: byte value = (byte) 1000 <br/>
-<br/>
-String interpolation <br/>
-val name = "Example" <br/>
-print(s"$name is printed") <br/>
-print(f"$name%s is printed") <br/>
-`;
 
 
 
@@ -651,18 +776,6 @@ and traits when you want to decompose and reuse behaviour
 </pre>
 `;
 
-let caseClassesHTML = `
-Case classes are used to model immutable data structures. <br/>
-<pre><code class="language-scala">case class Person(name: String, relation: String)</code></pre>
-Since the fields of a case class are assumed to be immutable, the Scala compiler can generate many helpful methods <br/>
-
-An unapply method is generated, which allows you to perform pattern matching on a case class (that is, case Person(n, r) => ...). <br/>
-A copy method is generated in the class, which is very useful to create modified copies of an instance.<br/>
-equals and hashCode methods using structural equality are generated, allowing you to use instances of case classes in Maps. <br/>
-A default toString method is generated, which is helpful for debugging. <br/>
-
-`;
-
 
 let scalaLambdasHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>
@@ -685,61 +798,7 @@ fobj.abstractFun(5);
 3. Consumer - consume method take input and returns nothing <br/>
 `;
 
-let scalaFlowControlsHTML = `
-<pre><code class="language-scala">//conditional expressions
-val x = if a < b then a else b      //if expression
 
-val result = i match    //like switch, but its an expression
-  case 1 => "one"
-  case 2 => "two"
-  case _ => "other"
-  
-val p = Person("Fred")
-p match
-  case Person(name) if name == "Fred" =>
-    println(s"$name says, Yubba dubba doo")
-  case Person(name) if name == "Bam Bam" =>
-    println(s"$name says, Bam bam!")
-  case _ => println("Watch the Flintstones!")  
-</code></pre>
-`;
-
-let scalaLoopsHTML = `
-<pre><code class="language-scala">//loops
-val ints = List(1, 2, 3, 4, 5)
-for i <- ints do println(i)     //generators
-for
-  i <- ints
-  if i > 2                      //guards
-do
-  println(i)
-  
-//You can use multiple generators and guards.
-for
-  i <- 1 to 3
-  j <- 'a' to 'c'
-  if i == 2
-  if j == 'b'
-do
-  println(s"i = $i, j = $j")   // prints: "i = 2, j = b"
-  
-val doubles = for i <- ints yield i * 2     //for expression
-
-while x >= 0 do x = f(x) //while construct
-</code></pre>
-`;
-
-let scalaExceptionsHTML = `
-<pre><code class="language-scala">//exception handling
-try
-  writeTextToFile(text)
-catch
-  case ioe: IOException => println("Got an IOException.")
-  case nfe: NumberFormatException => println("Got a NumberFormatException.")
-finally
-  println("Clean up your resources here.")
-</code></pre>
-`;
 
 let scalaMultiThreadsHTML = `
 <div class="reqBanner"><img class="reqBannerImg"/>

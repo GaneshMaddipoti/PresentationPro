@@ -40,7 +40,7 @@ let scalaNodeDataArray = [
     {key: "Scala-Expressions", desc: "Expressions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaExpressionsHTML},
     {key: "Scala-Functions", desc: "Functions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaFunctionsHTML},
 
-    {key: "Scala-Conditions", desc: "Conditions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaFlowControlsHTML},
+    {key: "Scala-Conditions", desc: "Conditions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: conditionsHTML},
     {key: "Scala-Loops", desc: "Loops", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaLoopsHTML},
     {key: "Scala-Exceptions", desc: "Exceptions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaExceptionsHTML},
     {key: "Scala-Generics", desc: "Generics", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaGenericsHTML},
@@ -51,6 +51,7 @@ let scalaNodeDataArray = [
     {key: "Abstract-Classes", desc: "abstract classes", group: "Domain-Modeling", category: "simpleTextLeft150", toolTipHTML: abstractClassesHTML},
     {key: "Traits", desc: "trait", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: scalaTraitsHTML},
     {key: "Case-Class", desc: "case class", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: caseClassesHTML},
+    {key: "Enums", desc: "enums", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: enumsHTML},
 
     {key: "Scala-Semantics", desc: "Semantics", isGroup: true, group: "Scala", expand: false, category: "grid3"},
 
