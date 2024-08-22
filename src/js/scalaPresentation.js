@@ -38,20 +38,24 @@ let scalaNodeDataArray = [
     {key: "Scala-Identifiers", desc: "Identifiers", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaIdentifiersHTML},
     {key: "Scala-Datatypes", desc: "Datatypes", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaDataTypeHTML},
     {key: "Scala-Expressions", desc: "Expressions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaExpressionsHTML},
-    {key: "Scala-Functions", desc: "Functions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaFunctionsHTML},
+    {key: "Scala-Methods", desc: "Methods", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaMethodsHTML},
 
     {key: "Scala-Conditions", desc: "Conditions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: conditionsHTML},
     {key: "Scala-Loops", desc: "Loops", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaLoopsHTML},
     {key: "Scala-Exceptions", desc: "Exceptions", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaExceptionsHTML},
     {key: "Scala-Generics", desc: "Generics", group:"Scala-Syntax", category: "simpleText100", toolTipHTML: scalaGenericsHTML},
 
-    {key: "Domain-Modeling", desc: "Domain Modeling", group: "Scala-Syntax", isGroup: true, category: "tree", toolTipHTML: domainModelingHTML, expand: false},
+    {key: "Domain-Modeling", desc: "OOP", group: "Scala-Syntax", isGroup: true, category: "tree", toolTipHTML: domainModelingHTML, expand: false},
     {key: "Class", desc: "class", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: classHTML},
     {key: "Object", desc: "object", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: objectHTML},
     {key: "Abstract-Classes", desc: "abstract classes", group: "Domain-Modeling", category: "simpleTextLeft150", toolTipHTML: abstractClassesHTML},
     {key: "Traits", desc: "trait", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: scalaTraitsHTML},
     {key: "Case-Class", desc: "case class", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: caseClassesHTML},
     {key: "Enums", desc: "enums", group: "Domain-Modeling", category: "simpleText100", toolTipHTML: enumsHTML},
+
+    {key: "FP", desc: "FP", group: "Scala-Syntax", isGroup: true, category: "tree", expand: false},
+    {key: "Functions", desc: "Functions", group: "FP", category: "simpleText100", toolTipHTML: functionsHTML},
+
 
     {key: "Scala-Semantics", desc: "Semantics", isGroup: true, group: "Scala", expand: false, category: "grid3"},
 

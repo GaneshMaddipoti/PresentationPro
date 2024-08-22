@@ -155,9 +155,9 @@ Operators
 </pre>
 `;
 
-let scalaFunctionsHTML = `
+let scalaMethodsHTML = `
 <pre>
-<code class="language-scala">//Functions
+<code class="language-scala">//Methods
 def method(arg0: String): String = arg0 + "!"
 
 def callByName(arg0: => Long): Unit = {
@@ -172,9 +172,9 @@ def savePicture(name: String, size: Long = 100): Unit = {
 savePicture(name="Sample")
 </code></pre>
 <pre>When you need loops, use tail recursion.
-Functions that returns Unit, mostly do side effects.
-We can define functions inside a function //auxiliary function
-We you define function outside a class/object, its in package
+Methods that returns Unit, mostly do side effects.
+We can define methods inside a method //auxiliary method
+We you define methods outside a class/object, its in package
 
 Call by Value   : value is evaluated before call
 Call by name    : expression as anonymous object is passed  
@@ -410,7 +410,61 @@ object Robot extends App {
 </pre>
 `;
 
+let functionsHTML = `
+<pre><code class="language-scala">//functions
+val function0 = new Function0[String] {
+  override def apply(): String = "hello"
+}
+val f0 = new (() => String) {
+  override def apply(): String = "hello"
+}
+val f = () => "hello"
 
+//LAMBDA representation of above function
+val f1 = (s: String) => s.toInt
+//curries
+val adder = new (Int => (Int => Int)) {
+  override def apply(x: Int): Int => Int = new ((Int) => Int){
+    override def apply(y: Int): Int = (x + y)
+  }
+}
+val some = (x: Int) => (y: Int) => x + y
+def someBetter(x:Int)(y:Int) = x + y
+
+//higher order functions
+def nTimes(f: Int => Int, n: Int, x: Int) : Int = {
+  if(n <=0 ) x
+  else nTimes(f, n-1, f(x))
+}
+def nTimesBetter(f:Int => Int, n: Int): (Int => Int) = {
+  if(n <= 0) (x:Int) => x
+  else (x:Int) => nTimesBetter(f, n-1)(f(x))
+}
+
+//functions with multiple parameter lists
+def curriedFormatter(c: String)(d: Double) = c.format(d)
+
+@main
+def starter(args: String*): Unit = {
+  val adder3 = adder(3)
+  println(adder3(4))                //7
+  val plusOne = (x:Int) => x+1
+  println(nTimes(plusOne, 9, 1))
+  println(nTimesBetter(plusOne, 10)(1))
+  println(some(33)(33))
+  println(someBetter(34)(34))
+  val simpleFormatter = curriedFormatter("%4.2f")
+  println(simpleFormatter(Math.PI))
+}
+</code>
+</pre>
+<pre>
+1. A function is a instances of Function class types
+2. There are Function0 to Function22 function class types in scala
+3. Function[Int, Int, Int] === ((Int, Int) => Int)
+4. Functions which take/return functions are call higher order functions.
+</pre>
+`;
 
 
 
